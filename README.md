@@ -18,7 +18,7 @@ https://www.figma.com/file/zRJMcys4TZsXuvKqmzgjaR/SmileBar
 1. Clone repo
 
 ```bash
-[https://github.com/SoftRyzen-internship/smile_bar.git](https://github.com/SoftRyzen-internship/smile_bar.git)
+https://github.com/SoftRyzen-internship/smile_bar.git
 ```
 
 > if you haven't access to repo - write to me in telegram
