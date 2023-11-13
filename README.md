@@ -2,7 +2,7 @@
 
 ## Design Layout
 
-[https://www.figma.com/file/zRJMcys4TZsXuvKqmzgjaR/SmileBar](https://www.figma.com/file/zRJMcys4TZsXuvKqmzgjaR/SmileBar)
+https://www.figma.com/file/zRJMcys4TZsXuvKqmzgjaR/SmileBar
 
 ## 📚 Best practices
 
