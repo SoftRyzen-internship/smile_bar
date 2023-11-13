@@ -1,0 +1,133 @@
+# Next.js tailwind.css and Sanity CMS starter
+
+## Design Layout
+
+[https://www.figma.com/file/zRJMcys4TZsXuvKqmzgjaR/SmileBar](https://www.figma.com/file/zRJMcys4TZsXuvKqmzgjaR/SmileBar)
+
+## 📚 Best practices
+
+> "Any fool can write code that a computer can understand. Good programmers
+> write code that humans can understand." - Martin Fowler
+
+- [ ] [Cheat sheet 1](https://my-js.org/docs/other/best-practices#%D1%88%D0%BF%D0%B0%D1%80%D0%B3%D0%B0%D0%BB%D0%BA%D0%B0-%D0%BF%D0%BE-react)
+- [ ] [Cheat sheet 2](https://my-js.org/docs/other/react-philosophies)
+- [ ] [Cheat sheet 3](https://alexkondov.com/tao-of-react/)
+
+## 🥁 Getting started
+
+1. Clone repo
+
+```bash
+[https://github.com/SoftRyzen-internship/smile_bar.git](https://github.com/SoftRyzen-internship/smile_bar.git)
+```
+
+> if you haven't access to repo - write to me in telegram
+> [@LanaSvetCat](https://t.me/LanaSvetCat)
+
+1. Recommended for use **npm** - `npm i` or `npm install`
+2. Create file `.env.local` in the project root using `.env.local.example` as a
+   template
+3. `npm run dev`
+4. Open `http://localhost:3000`.
+
+## Project structure
+
+> Attention! The project structure is not final and can be changed at any time.
+
+**💁‍♀️ Create a components folder for each module**
+
+<details>
+
+<summary><b>💡 Example:</b></summary>
+
+<br/>
+
+```
+# ✅ Good
+
+├── sections
+    ├── Header
+        ├── index.js
+        ├── Header.jsx
+    ├── Footer
+        ├── index.js
+        ├── Footer.jsx
+```
+
+</details>
+
+---
+
+**💁‍♀️ Reusable css classes should be placed in the `styles` folder .**
+
+<details>
+
+<summary><b>💡 Example:</b></summary>
+
+<br/>
+
+```css
+/*globals.css */
+
+@layer components {
+  .your-class {
+    @apply ...;
+  }
+}
+```
+
+</details>
+
+---
+
+**💁‍♀️ Description of object structure**
+
+<details>
+
+<summary><b>💡 Structure: </b></summary>
+
+<br/>
+
+```
+|-- components -> folder with reusable components
+  |-- NameComponent -> folders for each component
+    |-- NameComponent.jsx -> main component
+    |-- index.js -> file for re-export
+|-- app -> pages and routing
+|-- public -> static files
+|-- styles -> global styles
+
+<!-- You can create these folders already in work -->
+|-- data -> data for the project ( from graphql, json, etc.)
+|-- hooks -> custom users hooks
+|-- utils -> helpers, functions, etc.
+```
+
+</details>
+
+---
+
+## 📚 Components API
+
+Each component has its own API. You can find it in the component's folder. This
+is a list of more common components and their API.
+
+This is example of API for component `Title` and `Paragraph`
+
+- ### Title
+
+| Prop        | Default     | Description                                     |
+| ----------- | ----------- | ----------------------------------------------- |
+| `tag`       | `h2`        | choose the tag of title you'd need: `h1` - `h3` |
+| `variant`   | `primary`   | `main`, `primary`, `secondary`, `tertiary`      |
+| `children`  | `undefined` | required, any content                           |
+| `className` | `undefined` | add custom or additional css class you'd need   |
+| `shadow`    | `undefined` | add text as a shadow decoration of the element  |
+
+- ### Paragraph
+
+| Prop        | Default     | Description                                   |
+| ----------- | ----------- | --------------------------------------------- |
+| `variant`   | `normal`    | `normal`, `large`, `small`                    |
+| `children`  | `undefined` | required, any content                         |
+| `className` | `undefined` | add custom or additional css class you'd need |

@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add global style for multiple component */
+body {
+  background-color: #1165e2;
+}
