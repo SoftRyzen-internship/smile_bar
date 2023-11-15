@@ -5,7 +5,6 @@ export const ExampleSection = () => {
     <section>
       <div className="component container mx-auto">
         <Example />
-        <Title>Tanya Helloy</Title>
       </div>
     </section>
   );

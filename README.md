@@ -115,14 +115,11 @@ is a list of more common components and their API.
 This is example of API for component `Title` and `Paragraph`
 
 - ### Title
+  Uses: for a section title
 
-| Prop        | Default     | Description                                     |
-| ----------- | ----------- | ----------------------------------------------- |
-| `tag`       | `h2`        | choose the tag of title you'd need: `h1` - `h3` |
-| `variant`   | `primary`   | `main`, `primary`, `secondary`, `tertiary`      |
-| `children`  | `undefined` | required, any content                           |
-| `className` | `undefined` | add custom or additional css class you'd need   |
-| `shadow`    | `undefined` | add text as a shadow decoration of the element  |
+| Prop       | Default     | Description                |
+| ---------- | ----------- | -------------------------- |
+| `children` | `undefined` | required, any text content |
 
 - ### Paragraph
 
