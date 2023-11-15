@@ -18,11 +18,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="uk">
       <body
-        className={`${montserrat.className} flex flex-col h-full min-h-screen`}
+        className={`${montserrat.className} flex flex-col h-full min-h-screen py-9`}
       >
-        <header>
-          <Header />
-        </header>
+        <Header />
         <main className="flex-grow">{children}</main>
         <footer>
           <p>Footer</p>
