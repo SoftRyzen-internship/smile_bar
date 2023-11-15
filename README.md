@@ -144,4 +144,4 @@ This is example of API for component `Title` and `Paragraph`
 | `disabled`  | `false`     | boolean value of button activity              |
 | `className` | `*`         | add custom or additional css class you'd need |
 
-*`rounded-lg transition duration-300 ease-in  bg-btn hover:bg-btnHover  cursor-pointer py-3 px-6 text-base font-medium`
+\*`rounded-lg transition duration-300 ease-in  bg-btn hover:bg-btnHover  cursor-pointer py-3 px-6 text-base font-medium`
