@@ -1,11 +1,11 @@
-import { Example } from "@/components/Example";
+import { Title, Example } from '@/components';
 
 export const ExampleSection = () => {
-    return (
-        <section>
-            <div className="component">
-                <Example />
-            </div>
-        </section>
-    );
-    }
+  return (
+    <section>
+      <div className="component container mx-auto">
+        <Example />
+      </div>
+    </section>
+  );
+};
