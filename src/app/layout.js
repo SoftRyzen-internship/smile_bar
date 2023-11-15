@@ -1,7 +1,7 @@
 import { Montserrat } from 'next/font/google';
-import Link from 'next/link';
 import '@/styles/globals.css';
-import { Logo } from '@/components/Logo';
+
+import Header from '@/sections/Header/Header';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -21,9 +21,7 @@ export default function RootLayout({ children }) {
         className={`${montserrat.className} flex flex-col h-full min-h-screen`}
       >
         <header>
-          <Link href="/">
-            <Logo />
-          </Link>
+          <Header />
         </header>
         <main className="flex-grow">{children}</main>
         <footer>

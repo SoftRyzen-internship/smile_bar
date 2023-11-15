@@ -1,4 +1,4 @@
-import { Title, Example } from '@/components';
+import { Example } from '@/components/Example';
 
 export const ExampleSection = () => {
   return (
