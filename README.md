@@ -134,3 +134,14 @@ This is example of API for component `Title` and `Paragraph`
 | Prop        | Default                                 | Description                     |
 | ----------- | --------------------------------------- | ------------------------------- |
 | `className` | `w-[68px] h-12 xl:w-[90px] xl:h-[62px]` | add custom css class you'd need |
+
+- ### Button
+
+| Prop        | Default     | Description                                   |
+| ----------- | ----------- | --------------------------------------------- |
+| `label`     | `undefined` | required, any content                         |
+| `onClick`   | `undefined` | required, add function                        |
+| `disabled`  | `false`     | boolean value of button activity              |
+| `className` | `*`         | add custom or additional css class you'd need |
+
+*`rounded-lg transition duration-300 ease-in  bg-btn hover:bg-btnHover  cursor-pointer py-3 px-6 text-base font-medium`
