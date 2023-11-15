@@ -26,7 +26,27 @@ module.exports = {
         },
       },
       colors: {
-        //accent: '#FFC107',  - example
+        //text-colors
+        primary: '#1D1D1B',
+        placeholder: '#1D1D1B26',
+        error: '#FF5555',
+        contact: '#000000',
+        //bg-colors
+        primaryBg: '#FFFFFF',
+        heroBg: '#FFFFFF40',
+        purple: '#D6C8FF',
+        rose: '#EDC6FF',
+        serviceBlock: '#BBBBBB1A',
+        block: '#D3D3D340',
+        blockBlue: '#A6D4FF',
+        blockPurple: '#A6AFFF',
+        //btn-colors
+        btn: '#C3C7F4',
+        btnHover: '#9FA4DF',
+      },
+      backgroundImage: {
+        serviceGradient:
+          'linear-gradient(180deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.00) 49.48%)',
       },
       fontFamily: {
         sans: ['var(--font-montserrat)', 'sans-serif'],
