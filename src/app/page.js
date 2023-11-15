@@ -1,8 +1,5 @@
-import { ExampleSection } from '@/sections/ExampleSection/ExampleSection'
-
+import { ExampleSection } from '@/sections/ExampleSection/ExampleSection';
 
 export default function Home() {
-  return (
-    <ExampleSection/>
-  )
+  return <ExampleSection />;
 }
