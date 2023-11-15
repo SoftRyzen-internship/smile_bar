@@ -131,3 +131,9 @@ This is example of API for component `Title` and `Paragraph`
 | `variant`   | `normal`    | `normal`, `large`, `small`                    |
 | `children`  | `undefined` | required, any content                         |
 | `className` | `undefined` | add custom or additional css class you'd need |
+
+- ### Logo
+
+| Prop        | Default                                 | Description                     |
+| ----------- | --------------------------------------- | ------------------------------- |
+| `className` | `w-[68px] h-12 xl:w-[90px] xl:h-[62px]` | add custom css class you'd need |
