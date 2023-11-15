@@ -7,13 +7,13 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   screens: {
-      sm: '480px',
-      md: '768px',
-      xl: '1280px',
-      smOnly: { max: '767.98px' },
-      mdOnly: { min: '768px', max: '1279.98px' },
-      notXl: { max: '1279.98px' },
-    },
+    sm: '480px',
+    md: '768px',
+    xl: '1280px',
+    smOnly: { max: '767.98px' },
+    mdOnly: { min: '768px', max: '1279.98px' },
+    notXl: { max: '1279.98px' },
+  },
   theme: {
     extend: {
       container: {
@@ -29,12 +29,12 @@ module.exports = {
         //accent: '#FFC107',  - example
       },
       fontFamily: {
-        //sans: ['Inter', 'sans-serif'], - example
+        sans: ['var(--font-montserrat)', 'sans-serif'],
       },
       boxShadow: {
-      //header: '1px 2px 8px rgba(37, 101, 208, 0.14)', -example
+        //header: '1px 2px 8px rgba(37, 101, 208, 0.14)', -example
       },
     },
   },
   plugins: [],
-}
+};
