@@ -33,7 +33,7 @@ const Header = () => {
       <nav className="hidden xl:block">
         <Navigation />
       </nav>
-      <div className="hidden">
+      <div className="hidden xl:block">
         <Call />
       </div>
     </header>
