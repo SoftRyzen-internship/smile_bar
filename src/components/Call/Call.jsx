@@ -1,4 +1,5 @@
 import CallIcon from '/public/call.svg';
+
 export const Call = () => {
   return (
     <div className="flex gap-2 items-center justify-center">
