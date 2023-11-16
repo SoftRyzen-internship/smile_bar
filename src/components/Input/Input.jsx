@@ -63,7 +63,7 @@ const Input = ({
       <label htmlFor={name}>{labelText}</label>
       {type === 'textarea' ? (
         <textarea
-          className={`h-[169px] py-[8px] px-[12px] rounded-[12px] bg-primaryBg placeholder:text-placeholder focus-visible:outline-none${
+          className={`h-[169px] py-[8px] px-[12px] rounded-[12px] bg-primaryBg placeholder:text-placeholder focus-visible:outline-none ${
             errors[name] && 'text-error'
           }`}
           id={name}
@@ -96,6 +96,23 @@ const Input = ({
       </p>
     </div>
   );
+};
+
+Input.proptypes = {
+  labelText: PropTypes.string,
+  placeholderText: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(['name', 'phone', 'textarea']).isRequired,
+  setValue: PropTypes.func.isRequired,
+  errors: PropTypes.object.isRequired,
+  register: PropTypes.func,
+  errorMessages: PropTypes.shape({
+    required: PropTypes.string,
+    minLength: PropTypes.string,
+    maxLength: PropTypes.string,
+    pattern: PropTypes.string,
+  }),
+  className: PropTypes.string,
 };
 
 export default Input;

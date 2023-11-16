@@ -145,3 +145,19 @@ This is example of API for component `Title` and `Paragraph`
 | `className` | `*`         | add custom or additional css class you'd need |
 
 \*`rounded-lg transition duration-300 ease-in  bg-btn hover:bg-btnHover  cursor-pointer py-3 px-6 text-base font-medium`
+
+- ### Input
+
+| Prop              | Default     | Description                                                                                           |
+| ----------------- | ----------- | ----------------------------------------------------------------------------------------------------- |
+| `name`            | `undefined` | required, unique(!!!) name for input element of component                                             |
+| `labelText`       | `""`        | text for label                                                                                        |
+| `placeholderText` | `""`        | text for placeholder                                                                                  |
+| `type`            | `undefined` | requered, input type: one of 'name', 'phone', textarea'                                               |
+| `setValue`        | `undefined` | requered, function with same name from useForm()(react-hook-form)                                     |
+| `register`        | `undefined` | requered, function with same name from useForm()(react-hook-form)                                     |
+| `errors`          | `undefined` | requered, error object with same name from useForm()(react-hook-form)                                 |
+| `errorMessages`   | `{}`        | custom error message, object with optional string fields: required, minLength, maxLength and pattern. |
+| `className`       | `*`         | add custom or additional css class for wrapper you'd need                                             |
+
+\*`The component needs a <form> wrapper and some outputs from the hook useForm()  from the React-hook-form library`

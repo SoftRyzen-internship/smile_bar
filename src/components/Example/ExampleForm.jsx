@@ -26,10 +26,13 @@ export const ExampleForm = () => {
   };
 
   return (
-    <form className="px-[64px] py-[36px] " onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className="max-w-[424px] px-[64px] py-[36px] rounded-[24px] bg-block "
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <Input
         name="name"
-        labelText="Ім'я"
+        labelText="Ім'я*"
         placeholderText="Іван Іванов"
         type="name"
         setValue={setValue}
@@ -44,7 +47,7 @@ export const ExampleForm = () => {
 
       <Input
         name="tel"
-        labelText="Телефон"
+        labelText="Телефон*"
         placeholderText="+38 050 123 45 67"
         type="phone"
         setValue={setValue}
