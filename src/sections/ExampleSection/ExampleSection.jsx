@@ -1,5 +1,6 @@
-import { Title, Example } from '@/components';
-import { ExampleForm } from '@/components/Example/ExampleForm';
+
+import { Example } from '@/components/Example';
+
 
 export const ExampleSection = () => {
   return (

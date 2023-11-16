@@ -1,6 +1,11 @@
 import PropTypes from 'prop-types';
 
-const Button = ({ label, onClick, disabled = false, className = '' }) => {
+export const Button = ({
+  label,
+  onClick,
+  disabled = false,
+  className = '',
+}) => {
   return (
     <button
       type="submit"
@@ -19,5 +24,3 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   className: PropTypes.string,
 };
-
-export default Button;
