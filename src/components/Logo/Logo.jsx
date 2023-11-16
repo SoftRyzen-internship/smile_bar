@@ -8,6 +8,6 @@ export const Logo = ({
   return <LogoIcon className={className} />;
 };
 
-Logo.PropTypes = {
+Logo.propTypes = {
   className: PropTypes.string,
 };

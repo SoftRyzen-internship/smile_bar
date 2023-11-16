@@ -175,3 +175,16 @@ This is example of API for component `Title` and `Paragraph`
 | Prop       | Default     | Description           |
 | ---------- | ----------- | --------------------- |
 | `children` | `undefined` | required, any content |
+
+- ### TabList
+
+| Prop        | Default     | Description                                   |
+| ----------- | ----------- | --------------------------------------------- |
+| `data`      | `undefined` | required, object of:                          |
+|             |             |  - id (number, required),                     |
+|             |             |  - title (string, required),                  |
+|             |             |  - description (string, required),            |
+|             |             |  - addition (array),                          |
+|             |             |  - link (string)                              |
+| `type`      | `undefined` | `benefits`, `questions`                       |
+
