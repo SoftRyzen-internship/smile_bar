@@ -7,6 +7,9 @@ body {
   background-color: var(--primaryBg);
 }
 
+/* Slider */
+@import '../components/Slider/Slider.module.css';
+
 .ReactCollapse--collapse {
   transition: height 500ms;
 }
