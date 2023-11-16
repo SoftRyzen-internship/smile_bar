@@ -4,8 +4,12 @@
 
 /* Add global style for multiple component */
 body {
-  background-color: #1165e2;
+  background-color: var(--primaryBg);
 }
 
 /* Slider */
 @import '../components/Slider/Slider.module.css';
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
+}

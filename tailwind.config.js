@@ -6,16 +6,17 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  screens: {
-    sm: '480px',
-    md: '768px',
-    xl: '1280px',
-    smOnly: { max: '767.98px' },
-    mdOnly: { min: '768px', max: '1279.98px' },
-    notXl: { max: '1279.98px' },
-  },
+
   theme: {
     extend: {
+      screens: {
+        sm: '480px',
+        md: '768px',
+        xl: '1280px',
+        smOnly: { max: '767.98px' },
+        mdOnly: { min: '768px', max: '1279.98px' },
+        notXl: { max: '1279.98px' },
+      },
       container: {
         center: true,
         padding: {
@@ -38,6 +39,7 @@ module.exports = {
         rose: '#EDC6FF',
         serviceBlock: '#BBBBBB1A',
         block: '#D3D3D340',
+        blockHover: '#D3D3D380',
         blockBlue: '#A6D4FF',
         blockPurple: '#A6AFFF',
         //btn-colors
