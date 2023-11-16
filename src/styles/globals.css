@@ -4,7 +4,7 @@
 
 /* Add global style for multiple component */
 body {
-  background-color: #FFFFFF;
+  background-color: var(--primaryBg);
 }
 
 .ReactCollapse--collapse {
