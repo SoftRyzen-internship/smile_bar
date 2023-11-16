@@ -2,8 +2,8 @@ import phoneNormalize from '@/utils';
 import PropTypes from 'prop-types';
 
 const Input = ({
-  labelText,
-  placeholderText,
+  labelText = '',
+  placeholderText = '',
   name,
   type,
   setValue,
@@ -42,9 +42,12 @@ const Input = ({
   const onChangeProps = type === 'phone' ? { onChange: handleChange } : {};
 
   return (
-    <div>
+    <div
+      className={`flex flex-col gap-[4px] max-w-[296px] text-[16px] font-[400] text-primary bg-transparent ${className}`}
+    >
       <label htmlFor={name}>{labelText}</label>
       <input
+        className="py-[8px] px-[12px] rounded-[12px] bg-primaryBg placeholder:text-placeholder focus-visible:outline-none"
         type="text"
         id={name}
         name={name}
@@ -56,8 +59,12 @@ const Input = ({
             : { ...nameRegisterValidation },
         )}
         {...onChangeProps}
+        noValidate
+        autoComplete="off"
       />
-      <p>{errors[name]?.message}</p>
+      <p className="text-[12px] font-[500] text-error leading-[1.2] h-[15px] self-end">
+        {errors[name]?.message}
+      </p>
     </div>
   );
 };

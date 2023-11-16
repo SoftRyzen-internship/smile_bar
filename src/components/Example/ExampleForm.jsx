@@ -17,11 +17,11 @@ export const ExampleForm = () => {
     formState: { errors },
   } = useForm();
 
-  //   useFormPersist(LOCALSTORAGE_KEY, {
-  //     watch,
-  //     setValue,
-  //     storage: typeof window !== 'undefined' && window.localStorage,
-  //   });
+  useFormPersist(LOCALSTORAGE_KEY, {
+    watch,
+    setValue,
+    storage: typeof window !== 'undefined' && window.localStorage,
+  });
 
   const onSubmit = data => {
     console.log(data);
