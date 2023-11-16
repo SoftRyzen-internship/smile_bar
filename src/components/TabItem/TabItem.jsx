@@ -8,7 +8,7 @@ export const TabItem = ({ open, data, type, toggle }) => {
   const { id, title, description } = data;
   return (
     <li
-      className={`cursor-pointer bg-[#D3D3D340] px-9 py-6 rounded-3xl mb-2 ${
+      className={`cursor-pointer bg-block hover:bg-blockHover px-9 py-6 rounded-3xl mb-2 ${
         open && type === 'benefits' && style.bg_ellipse
       } ${open && type === 'questions' && style.bg_ellipse_ques}
       }`}
