@@ -6,3 +6,6 @@
 body {
   background-color: #1165e2;
 }
+
+/* Slider */
+@import '../components/Slider/Slider.module.css';
