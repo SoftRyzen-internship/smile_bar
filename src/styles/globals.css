@@ -6,3 +6,7 @@
 body {
   background-color: var(--primaryBg);
 }
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
+}
