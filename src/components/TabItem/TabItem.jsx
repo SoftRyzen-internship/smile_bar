@@ -1,4 +1,6 @@
 import { Collapse } from 'react-collapse';
+import PropTypes from 'prop-types';
+
 import QuestionIcon from '/public/question.svg';
 import style from './TabItem.module.css';
 
@@ -41,4 +43,11 @@ export const TabItem = ({ open, data, type, toggle }) => {
       </div>
     </li>
   );
+};
+
+TabItem.propTypes = {
+  open: PropTypes.bool,
+  data: PropTypes.object.isRequired,
+  type: PropTypes.string,
+  toggle: PropTypes.func,
 };
