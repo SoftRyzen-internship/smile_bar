@@ -1,3 +1,3 @@
 import phoneNormalize from './phoneNormalize';
-
-export default phoneNormalize;
+import textareaNormalize from './textareaNormalize';
+export { phoneNormalize, textareaNormalize };

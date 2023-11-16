@@ -6,8 +6,6 @@ import Input from '../Input/Input';
 
 const LOCALSTORAGE_KEY = 'Example_key';
 export const ExampleForm = () => {
-  //   const hookObject = useForm();
-
   const {
     register,
     handleSubmit,
@@ -28,7 +26,7 @@ export const ExampleForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className="px-[64px] py-[36px] " onSubmit={handleSubmit(onSubmit)}>
       <Input
         name="name"
         labelText="Ім'я"
@@ -57,6 +55,19 @@ export const ExampleForm = () => {
           minLength: 'Мінімум 11 цифр',
         }}
       />
+      <Input
+        name="message"
+        labelText="Повідомлення"
+        placeholderText="Ваше повідомлення..."
+        type="textarea"
+        setValue={setValue}
+        register={register}
+        errors={errors}
+        errorMessages={{
+          maxLength: 'Максімум 500 символів',
+        }}
+      />
+
       <button type="submit">Submit</button>
     </form>
   );
