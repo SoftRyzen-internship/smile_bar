@@ -161,3 +161,11 @@ This is example of API for component `Title` and `Paragraph`
 | `className`       | `*`         | add custom or additional css class for wrapper you'd need                                             |
 
 \*`The component needs a <form> wrapper and some outputs from the hook useForm()  from the React-hook-form library`
+
+- ### Section 
+
+| Prop        | Default     | Description                                   |
+| ----------- | ----------- | --------------------------------------------- |
+| `title`     | `undefined` | required, string, text for title              |
+| `children`  | `undefined` | required, any content                         |
+| `className` | `""`        | add custom or additional css class you'd need |
