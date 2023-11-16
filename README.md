@@ -169,3 +169,9 @@ This is example of API for component `Title` and `Paragraph`
 | `title`     | `undefined` | required, string, text for title              |
 | `children`  | `undefined` | required, any content                         |
 | `className` | `""`        | add custom or additional css class you'd need |
+
+- ### Slider
+
+| Prop       | Default     | Description           |
+| ---------- | ----------- | --------------------- |
+| `children` | `undefined` | required, any content |
