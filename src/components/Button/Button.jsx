@@ -9,7 +9,7 @@ export const Button = ({
   return (
     <button
       type="submit"
-      className={`rounded-lg transition duration-300 ease-in  bg-btn hover:bg-btnHover  cursor-pointer py-3 px-6 text-base font-medium ${className}`}
+      className={`rounded-lg transition duration-300 ease-in  bg-btn hover:bg-btnHover  focus:bg-btnHover cursor-pointer py-3 px-6 text-base font-medium ${className}`}
       onClick={onClick}
       disabled={disabled}
     >
