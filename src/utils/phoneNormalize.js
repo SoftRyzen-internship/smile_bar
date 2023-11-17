@@ -1,4 +1,7 @@
 const phoneNormalize = value => {
+  if (value.match(/^[+]+[\D]*$/gm)) {
+    return '+';
+  }
   const input = value.replace(/[^\d]/g, '').split('');
   return '+DD DDD DDD DD DD'
     .split('')

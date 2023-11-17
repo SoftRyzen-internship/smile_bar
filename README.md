@@ -153,10 +153,10 @@ This is example of API for component `Title` and `Paragraph`
 | `name`            | `undefined` | required, unique(!!!) name for input element of component                                             |
 | `labelText`       | `""`        | text for label                                                                                        |
 | `placeholderText` | `""`        | text for placeholder                                                                                  |
-| `type`            | `undefined` | requered, input type: one of 'name', 'phone', textarea'                                               |
-| `setValue`        | `undefined` | requered, function with same name from useForm()(react-hook-form)                                     |
-| `register`        | `undefined` | requered, function with same name from useForm()(react-hook-form)                                     |
-| `errors`          | `undefined` | requered, error object with same name from useForm()(react-hook-form)                                 |
+| `type`            | `undefined` | required, input type: one of 'name', 'phone'                                                          |
+| `setValue`        | `undefined` | required, function with same name from useForm()(react-hook-form)                                     |
+| `register`        | `undefined` | required, function with same name from useForm()(react-hook-form)                                     |
+| `errors`          | `undefined` | required, error object with same name from useForm()(react-hook-form)                                 |
 | `errorMessages`   | `{}`        | custom error message, object with optional string fields: required, minLength, maxLength and pattern. |
 | `className`       | `*`         | add custom or additional css class for wrapper you'd need                                             |
 
@@ -188,3 +188,4 @@ This is example of API for component `Title` and `Paragraph`
 |             |             |  - link (string)                              |
 | `isBenefit` | `false`     | `true` - for section "Benefits",              |
 |             |             | `false` - for section "Question-Answers"      |
+
