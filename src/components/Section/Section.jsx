@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 export const Section = ({ title, children, className = '' }) => {
   return (
     <section className={`py-10 ${className}`}>
-      <Title>{title}</Title>
-      {children}
+      <div className="container">
+        <Title>{title}</Title>
+        {children}
+      </div>
     </section>
   );
 };
