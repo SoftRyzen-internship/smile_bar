@@ -140,7 +140,6 @@ This is example of API for component `Title` and `Paragraph`
 | Prop        | Default     | Description                                   |
 | ----------- | ----------- | --------------------------------------------- |
 | `label`     | `undefined` | required, any content                         |
-| `onClick`   | `undefined` | required, add function                        |
 | `disabled`  | `false`     | boolean value of button activity              |
 | `className` | `*`         | add custom or additional css class you'd need |
 
