@@ -19,11 +19,11 @@ export const InputMessage = ({
 
   return (
     <label
-      className={`flex flex-col gap-[4px]  max-w-[296px] text-[16px] leading-[1.25] font-[400] text-primary bg-transparent ${className}`}
+      className={`flex flex-col gap-[4px] text-[16px] leading-[1.25] font-[400] text-primary bg-transparent ${className}`}
     >
       {labelText}
       <textarea
-        className={`h-[169px] py-[8px] px-[12px] rounded-[12px] bg-primaryBg placeholder:text-placeholder focus-visible:outline-none resize-none ${
+        className={`w-full h-[169px] py-[8px] px-[12px] rounded-[12px] bg-primaryBg placeholder:text-placeholder focus-visible:outline-none resize-none ${
           errors[name] && 'text-error'
         }`}
         id={name}

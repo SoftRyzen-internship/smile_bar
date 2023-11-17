@@ -20,7 +20,7 @@ export const Button = ({
 
 Button.propTypes = {
   label: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   disabled: PropTypes.bool,
   className: PropTypes.string,
 };

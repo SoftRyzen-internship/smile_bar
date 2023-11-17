@@ -52,11 +52,11 @@ export const Input = ({
 
   return (
     <label
-      className={`flex flex-col gap-[4px] max-w-[296px] text-[16px] leading-[1.25] font-[400] text-primary bg-transparent ${className}`}
+      className={`w-full flex flex-col gap-[4px] text-[16px] leading-[1.25] font-[400] text-primary bg-transparent ${className}`}
     >
       {labelText}
       <input
-        className={`py-[8px] px-[12px] rounded-[12px] bg-primaryBg placeholder:text-placeholder focus-visible:outline-none ${
+        className={`w-full py-[8px] px-[12px] rounded-[12px] bg-primaryBg placeholder:text-placeholder focus-visible:outline-none ${
           errors[name] && 'text-error'
         }`}
         type={typeIsPhone ? 'tel' : 'text'}

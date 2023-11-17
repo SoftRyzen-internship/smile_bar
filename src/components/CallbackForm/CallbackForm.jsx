@@ -31,10 +31,11 @@ export const CallbackForm = ({ className }) => {
 
   return (
     <form
-      className={`max-w-[424px] p-[16px] md:px-[64px] md:py-[36px] rounded-[24px] bg-block ${className}`}
+      className={`flex flex-col max-w-[424px] p-[16px] md:px-[64px] md:py-[36px] rounded-[24px] bg-block ${className}`}
       onSubmit={handleSubmit(onSubmit)}
     >
       <Input
+        className="mb-[-3px]"
         name="name"
         labelText="Ім'я*"
         placeholderText="Іван Іванов"
@@ -43,7 +44,7 @@ export const CallbackForm = ({ className }) => {
         register={register}
         errors={errors}
         errorMessages={{
-          required: "Обовє'язкове поле",
+          required: "Обов'язкове поле",
           minLength: 'Мінімум одна буква',
           maxLength: 'Максимум 70 символів',
           pattern: "Невірне ім'я",
@@ -51,19 +52,21 @@ export const CallbackForm = ({ className }) => {
       />
 
       <Input
-        name="tel"
+        className="mb-[-3px]"
+        name="phone"
         labelText="Телефон*"
         placeholderText="+38 050 123 45 67"
-        type="phone"
+        type="tel"
         setValue={setValue}
         register={register}
         errors={errors}
         errorMessages={{
-          required: "Обовє'язкове поле",
+          required: "Обов'язкове поле",
           minLength: 'Мінімум 11 цифр',
         }}
       />
       <InputMessage
+        className="mb-[-3px]"
         name="message"
         labelText="Повідомлення"
         placeholderText="Ваше повідомлення..."
@@ -77,13 +80,9 @@ export const CallbackForm = ({ className }) => {
 
       {/* <button type="submit">Submit</button> */}
       <Button
-        label={'отправить'}
-        onChange={() => {
-          console.log('Hello');
-        }}
-      >
-        Submit
-      </Button>
+        className="w-full md:w-[147px] mt-[5px] md:ml-auto"
+        label={'Відправити'}
+      ></Button>
     </form>
   );
 };
