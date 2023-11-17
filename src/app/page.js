@@ -1,13 +1,12 @@
-
-import { ExampleForm } from '@/components/Example/ExampleForm';
+import { CallbackForm } from '@/components/CallbackForm';
 import HeroSection from '@/sections/HeroSection/HeroSection';
-
 
 export default function Home() {
   return (
     <>
       <HeroSection />
-      <ExampleForm />
+      <p>Hello</p>
+      <CallbackForm />
     </>
   );
 }

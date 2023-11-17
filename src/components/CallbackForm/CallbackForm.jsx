@@ -3,9 +3,12 @@
 import { useForm } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
 import { Input } from '../Input';
+import { InputMessage } from '../InputMessage';
+import { Button } from '../Button';
 
-const LOCALSTORAGE_KEY = 'Example_key';
-export const ExampleForm = () => {
+const LOCAL_STORAGE_KEY = 'callback';
+
+export const CallbackForm = ({ className }) => {
   const {
     register,
     handleSubmit,
@@ -15,7 +18,7 @@ export const ExampleForm = () => {
     formState: { errors },
   } = useForm();
 
-  useFormPersist(LOCALSTORAGE_KEY, {
+  useFormPersist(LOCAL_STORAGE_KEY, {
     watch,
     setValue,
     storage: typeof window !== 'undefined' && window.localStorage,
@@ -23,11 +26,12 @@ export const ExampleForm = () => {
 
   const onSubmit = data => {
     console.log(data);
+    reset();
   };
 
   return (
     <form
-      className="max-w-[424px] px-[64px] py-[36px] rounded-[24px] bg-block "
+      className={`max-w-[424px] p-[16px] md:px-[64px] md:py-[36px] rounded-[24px] bg-block ${className}`}
       onSubmit={handleSubmit(onSubmit)}
     >
       <Input
@@ -41,7 +45,7 @@ export const ExampleForm = () => {
         errorMessages={{
           required: "Обовє'язкове поле",
           minLength: 'Мінімум одна буква',
-          minLength: 'Максімум 70 символів',
+          maxLength: 'Максимум 70 символів',
           pattern: "Невірне ім'я",
         }}
       />
@@ -59,7 +63,27 @@ export const ExampleForm = () => {
           minLength: 'Мінімум 11 цифр',
         }}
       />
-      <button type="submit">Submit</button>
+      <InputMessage
+        name="message"
+        labelText="Повідомлення"
+        placeholderText="Ваше повідомлення..."
+        setValue={setValue}
+        register={register}
+        errors={errors}
+        errorMessages={{
+          maxLength: 'Максимум 500 символів',
+        }}
+      />
+
+      {/* <button type="submit">Submit</button> */}
+      <Button
+        label={'отправить'}
+        onChange={() => {
+          console.log('Hello');
+        }}
+      >
+        Submit
+      </Button>
     </form>
   );
 };
