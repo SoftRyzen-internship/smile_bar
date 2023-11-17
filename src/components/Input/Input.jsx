@@ -20,6 +20,10 @@ export const Input = ({
       value: 1,
       message: errorMessages.minLength || 'Мінімум 1 символ',
     },
+    maxLength: {
+      value: 70,
+      message: errorMessages.maxLength || 'Максимум 70 символів',
+    },
     pattern: {
       value:
         /^(([A-Za-zА-Яа-яЇїІіЄєҐґ])+(['`][A-Za-zА-Яа-яЇїІіЄєҐґ]+)*)+([- ](([A-Za-zА-Яа-яЇїІіЄєҐґ])+(['`][A-Za-zА-Яа-яЇїІіЄєҐґ]+)*))* ?$/,
@@ -34,14 +38,17 @@ export const Input = ({
       message: errorMessages.minLength || 'Повинно бути мінімум 11 цифр ',
     },
   };
-
-  const handleChange = event => {
-    const { value } = event.target;
-    event.target.value = phoneNormalize(value);
-    setValue(name, event.target.value, { shouldValidate: true });
+  const getHandleChange = normalizeMethod => {
+    const fn = event => {
+      const { value } = event.target;
+      event.target.value = normalizeMethod ? normalizeMethod(value) : value;
+      setValue(name, event.target.value, { shouldValidate: true });
+    };
+    return fn;
   };
-
-  const onChangeProps = typeIsPhone ? { onChange: handleChange } : {};
+  const onChangeProps = {
+    onChange: getHandleChange(typeIsPhone && phoneNormalize),
+  };
 
   return (
     <label
