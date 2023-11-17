@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import data from '@/data/hero.json';
-import heroImage from '../../../public/hero.png';
+import heroImage from '../../../public/hero.webp';
 
-const HeroSection = () => {
+export const HeroSection = () => {
   const { title, subtitle, alt } = data;
   return (
     <section className="relative overflow-x-hidden xl:pt-[24px]">
@@ -26,10 +26,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      <div className="absolute top-[94px] md:top-[104px]  xl:top-[165px] right-[58px] md:right-[406px] xl:right-[982px] w-[749px] h-[749px] bg-purple blur-[200px] rounded-[749px] z-0"></div>
-      <div className="absolute left-[180px] md:left-[405px] xl:left-[967px] bottom-[-41px] md:bottom-[-51px] xl:bottom-[35px] w-[603px] h-[603px] bg-rose blur-[200px] rounded-[603px] z-0"></div>
     </section>
   );
 };
-
-export default HeroSection;

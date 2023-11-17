@@ -18,9 +18,7 @@ const Header = () => {
         <BurgerMenu isShow={menuShow} onClose={() => setMenuShow(false)} />
       ) : null}
       <div className="container mx-auto flex items-center justify-between pb-9 xl:pb-0">
-        <Link href="/">
-          <Logo />
-        </Link>
+        <Logo />
         {menuShow ? (
           <CloseIcon
             className="w-6 h-6 xl:hidden cursor-pointer"
