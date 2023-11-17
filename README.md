@@ -178,12 +178,14 @@ This is example of API for component `Title` and `Paragraph`
 
 - ### TabList
 
-| Prop   | Default     | Description                       |
-| ------ | ----------- | --------------------------------- |
-| `data` | `undefined` | required, object of:              |
-|        |             | - id (number, required),          |
-|        |             | - title (string, required),       |
-|        |             | - description (string, required), |
-|        |             | - addition (array),               |
-|        |             | - link (string)                   |
-| `type` | `undefined` | `benefits`, `questions`           |
+| Prop        | Default     | Description                                   |
+| ----------- | ----------- | --------------------------------------------- |
+| `data`      | `undefined` | required, object of:                          |
+|             |             |  - id (number, required),                     |
+|             |             |  - title (string, required),                  |
+|             |             |  - description (string, required),            |
+|             |             |  - addition (array),                          |
+|             |             |  - link (string)                              |
+| `isBenefit` | `false`     | `true` - for section "Benefits",              |
+|             |             | `false` - for section "Question-Answers"      |
+
