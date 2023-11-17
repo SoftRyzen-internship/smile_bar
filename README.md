@@ -162,7 +162,7 @@ This is example of API for component `Title` and `Paragraph`
 
 \*`The component needs a <form> wrapper and some outputs from the hook useForm()  from the React-hook-form library`
 
-- ### Section 
+- ### Section
 
 | Prop        | Default     | Description                                   |
 | ----------- | ----------- | --------------------------------------------- |
@@ -186,5 +186,5 @@ This is example of API for component `Title` and `Paragraph`
 |             |             |  - description (string, required),            |
 |             |             |  - addition (array),                          |
 |             |             |  - link (string)                              |
-| `type`      | `undefined` | `benefits`, `questions`                       |
-
+| `isBenefit` | `false`     | `true` - for section "Benefits",              |
+|             |             | `false` - for section "Question-Answers"      |
