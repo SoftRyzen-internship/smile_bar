@@ -1,4 +1,4 @@
-import HeroSection from '@/sections/HeroSection/HeroSection';
+import { HeroSection } from '@/sections/HeroSection';
 
 export default function Home() {
   return (
