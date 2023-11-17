@@ -56,7 +56,7 @@ export const CallbackForm = ({ className }) => {
         name="phone"
         labelText="Телефон*"
         placeholderText="+38 050 123 45 67"
-        type="tel"
+        type="phone"
         setValue={setValue}
         register={register}
         errors={errors}

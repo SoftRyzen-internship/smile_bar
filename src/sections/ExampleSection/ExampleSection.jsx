@@ -6,7 +6,6 @@ export const ExampleSection = () => {
     <section>
       <div className="component container mx-auto">
         <Example />
-        <ExampleForm />
       </div>
     </section>
   );
