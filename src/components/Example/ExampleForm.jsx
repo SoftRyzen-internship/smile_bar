@@ -2,7 +2,7 @@
 
 import { useForm } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
-import Input from '../Input/Input';
+import { Input } from '../Input';
 
 const LOCALSTORAGE_KEY = 'Example_key';
 export const ExampleForm = () => {
@@ -58,19 +58,6 @@ export const ExampleForm = () => {
           minLength: 'Мінімум 11 цифр',
         }}
       />
-      <Input
-        name="message"
-        labelText="Повідомлення"
-        placeholderText="Ваше повідомлення..."
-        type="textarea"
-        setValue={setValue}
-        register={register}
-        errors={errors}
-        errorMessages={{
-          maxLength: 'Максімум 500 символів',
-        }}
-      />
-
       <button type="submit">Submit</button>
     </form>
   );
