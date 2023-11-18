@@ -115,11 +115,11 @@ is a list of more common components and their API.
 This is example of API for component `Title` and `Paragraph`
 
 - ### Title
-  Uses: for a section title
 
-| Prop       | Default     | Description                |
-| ---------- | ----------- | -------------------------- |
-| `children` | `undefined` | required, any text content |
+| Prop        | Default     | Description                                   |
+| ----------- | ----------- | --------------------------------------------- |
+| `children`  | `undefined` | required, any text content                    |
+| `className` | " "         | add custom or additional css class you'd need |
 
 - ### Paragraph
 
@@ -178,14 +178,13 @@ This is example of API for component `Title` and `Paragraph`
 
 - ### TabList
 
-| Prop        | Default     | Description                                   |
-| ----------- | ----------- | --------------------------------------------- |
-| `data`      | `undefined` | required, object of:                          |
-|             |             |  - id (number, required),                     |
-|             |             |  - title (string, required),                  |
-|             |             |  - description (string, required),            |
-|             |             |  - addition (array),                          |
-|             |             |  - link (string)                              |
-| `isBenefit` | `false`     | `true` - for section "Benefits",              |
-|             |             | `false` - for section "Question-Answers"      |
-
+| Prop        | Default     | Description                              |
+| ----------- | ----------- | ---------------------------------------- |
+| `data`      | `undefined` | required, object of:                     |
+|             |             | - id (number, required),                 |
+|             |             | - title (string, required),              |
+|             |             | - description (string, required),        |
+|             |             | - addition (array),                      |
+|             |             | - link (string)                          |
+| `isBenefit` | `false`     | `true` - for section "Benefits",         |
+|             |             | `false` - for section "Question-Answers" |
