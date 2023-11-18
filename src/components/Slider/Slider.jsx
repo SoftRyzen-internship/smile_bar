@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
-import Slider from 'react-slick';
+import ReactSlider from 'react-slick';
 import PropTypes from 'prop-types';
 import '../../../node_modules/slick-carousel/slick/slick.css';
 import '../../../node_modules/slick-carousel/slick/slick-theme.css';
 
-export const SliderComp = ({ children }) => {
+export const Slider = ({ children }) => {
   const SampleNextArrow = props => {
     const { className, style, onClick } = props;
     return (
@@ -20,7 +20,7 @@ export const SliderComp = ({ children }) => {
           height: '24px',
           top: '100%',
           right: '50%',
-          transform: 'translate(32px, 20px)',
+          transform: 'translate(32px)',
         }}
         onClick={onClick}
       />
@@ -40,7 +40,7 @@ export const SliderComp = ({ children }) => {
           height: '24px',
           top: '100%',
           left: '50%',
-          transform: 'translate(-32px, 20px)',
+          transform: 'translate(-32px)',
         }}
         onClick={onClick}
       />
@@ -79,9 +79,9 @@ export const SliderComp = ({ children }) => {
       },
     ],
   };
-  return <Slider {...settings}>{children}</Slider>;
+  return <ReactSlider {...settings}>{children}</ReactSlider>;
 };
 
-SliderComp.propType = {
+Slider.propType = {
   children: PropTypes.element,
 };
