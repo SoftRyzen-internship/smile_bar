@@ -82,6 +82,6 @@ export const Slider = ({ children }) => {
   return <ReactSlider {...settings}>{children}</ReactSlider>;
 };
 
-Slider.propType = {
+Slider.propTypes = {
   children: PropTypes.element,
 };
