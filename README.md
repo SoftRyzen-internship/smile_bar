@@ -140,7 +140,6 @@ This is example of API for component `Title` and `Paragraph`
 | Prop        | Default     | Description                                   |
 | ----------- | ----------- | --------------------------------------------- |
 | `label`     | `undefined` | required, any content                         |
-| `onClick`   | `undefined` | required, add function                        |
 | `disabled`  | `false`     | boolean value of button activity              |
 | `className` | `*`         | add custom or additional css class you'd need |
 
@@ -153,7 +152,7 @@ This is example of API for component `Title` and `Paragraph`
 | `name`            | `undefined` | required, unique(!!!) name for input element of component                                             |
 | `labelText`       | `""`        | text for label                                                                                        |
 | `placeholderText` | `""`        | text for placeholder                                                                                  |
-| `type`            | `undefined` | required, input type: one of 'name', 'phone'                                                          |
+| `type`            | `undefined` | required, input type: one of 'name' or 'phone'                                                        |
 | `setValue`        | `undefined` | required, function with same name from useForm()(react-hook-form)                                     |
 | `register`        | `undefined` | required, function with same name from useForm()(react-hook-form)                                     |
 | `errors`          | `undefined` | required, error object with same name from useForm()(react-hook-form)                                 |
@@ -188,3 +187,18 @@ This is example of API for component `Title` and `Paragraph`
 |             |             | - link (string)                          |
 | `isBenefit` | `false`     | `true` - for section "Benefits",         |
 |             |             | `false` - for section "Question-Answers" |
+
+### InputMessage
+
+| Prop              | Default     | Description                                                           |
+| ----------------- | ----------- | --------------------------------------------------------------------- |
+| `name`            | `undefined` | required, unique(!!!) name for input element of component             |
+| `labelText`       | `""`        | text for label                                                        |
+| `placeholderText` | `""`        | text for placeholder                                                  |
+| `setValue`        | `undefined` | required, function with same name from useForm()(react-hook-form)     |
+| `register`        | `undefined` | required, function with same name from useForm()(react-hook-form)     |
+| `errors`          | `undefined` | required, error object with same name from useForm()(react-hook-form) |
+| `errorMessages`   | `{}`        | custom error message, object with optional string fields: maxLength   |
+| `className`       | `*`         | add custom or additional css class for wrapper you'd need             |
+
+\*`The component needs a <form> wrapper and some outputs from the hook useForm()  from the React-hook-form library`
