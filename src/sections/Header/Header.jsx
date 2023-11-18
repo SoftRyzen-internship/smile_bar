@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import Link from 'next/link';
 
 import BurgerIcon from '/public/menu.svg';
 import CloseIcon from '/public/close.svg';
@@ -13,7 +12,7 @@ import { BurgerMenu } from '@/components/BurgerMenu';
 const Header = () => {
   const [menuShow, setMenuShow] = useState(false);
   return (
-    <header className="relative w-full">
+    <header className="relative w-full xl:pb-6">
       {menuShow ? (
         <BurgerMenu isShow={menuShow} onClose={() => setMenuShow(false)} />
       ) : null}

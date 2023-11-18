@@ -11,7 +11,7 @@ export const Navigation = ({
       {navigation.map(({ id, title, link }, index) => (
         <li key={id}>
           <a
-            href={link}
+            href={`/${link}`}
             onClick={isShow ? onClose : null}
             className="text-center text-xl font-normal text-primary cursor-pointer xl:text-base hover:underline hover:text-contact"
           >
