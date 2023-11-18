@@ -1,3 +1,3 @@
-import phoneNormalize from './phoneNormalize';
-import textareaNormalize from './textareaNormalize';
-export { phoneNormalize, textareaNormalize };
+export * from './phoneNormalize';
+export * from './textareaNormalize';
+export * from './sendTelegramMessage';
