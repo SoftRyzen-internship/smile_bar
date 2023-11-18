@@ -187,6 +187,7 @@ This is example of API for component `Title` and `Paragraph`
 |             |             | - link (string)                          |
 | `isBenefit` | `false`     | `true` - for section "Benefits",         |
 |             |             | `false` - for section "Question-Answers" |
+| `children`  | `undefined` | add additional css class you'd need      |
 
 ### InputMessage
 
