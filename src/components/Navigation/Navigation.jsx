@@ -8,14 +8,15 @@ export const Navigation = ({
 }) => {
   return (
     <ul className={`flex flex-col items-center gap-5 xl:flex-row ${className}`}>
-      {navigation.map((el, index) => (
-        <li key={index}>
-          <p
+      {navigation.map(({ id, title, link }, index) => (
+        <li key={id}>
+          <a
+            href={`/${link}`}
             onClick={isShow ? onClose : null}
             className="text-center text-xl font-normal text-primary cursor-pointer xl:text-base hover:underline hover:text-contact"
           >
-            {el}
-          </p>
+            {title}
+          </a>
         </li>
       ))}
     </ul>
