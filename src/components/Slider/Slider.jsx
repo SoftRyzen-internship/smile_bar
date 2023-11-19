@@ -6,7 +6,11 @@ import PropTypes from 'prop-types';
 import '../../../node_modules/slick-carousel/slick/slick.css';
 import '../../../node_modules/slick-carousel/slick/slick-theme.css';
 
-export const Slider = ({ children }) => {
+export const Slider = ({
+  centralMode = true,
+  className = 'centralMode',
+  children,
+}) => {
   const SampleNextArrow = props => {
     const { className, style, onClick } = props;
     return (
@@ -48,7 +52,8 @@ export const Slider = ({ children }) => {
   };
 
   const settings = {
-    centerMode: true,
+    className: className,
+    centerMode: centralMode,
     infinite: true,
     centerPadding: '0px',
     slidesToShow: 3,
@@ -83,5 +88,7 @@ export const Slider = ({ children }) => {
 };
 
 Slider.propTypes = {
-  children: PropTypes.element,
+  centralMode: PropTypes.bool,
+  className: PropTypes.string,
+  children: PropTypes.node,
 };
