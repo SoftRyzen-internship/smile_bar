@@ -53,7 +53,7 @@ export const CallbackForm = ({ className }) => {
     });
     setIsPending(false);
   };
-  console.log({ isPending });
+
   return (
     <>
       <form
