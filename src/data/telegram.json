@@ -1,1 +1,8 @@
-{ "greetingsMessage": "Повідомлення з сайту" }
+{
+  "greetingsMessage": "Повідомлення з сайту",
+  "queryPending": "Відправка повідомлення",
+  "queryResolved": "Повідомлення відправлено",
+  "queryRejected": "Помилка",
+  "buttonSubmitLabel": "Відправити",
+  "noDataForConnect": "Нема куди відправляти"
+}

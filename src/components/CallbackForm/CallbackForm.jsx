@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
 import { Input } from '../Input';
@@ -8,10 +9,12 @@ import { Button } from '../Button';
 import { sendTelegramMessage } from '@/utils';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import messages from '../../data/telegram.json';
 
 const LOCAL_STORAGE_KEY = 'callback';
 
 export const CallbackForm = ({ className }) => {
+  const [isPending, setIsPending] = useState(false);
   const {
     register,
     handleSubmit,
@@ -28,24 +31,30 @@ export const CallbackForm = ({ className }) => {
   });
 
   const onSubmit = async data => {
-    console.log(data);
-
-    toast.promise(sendTelegramMessage(data), {
-      pending: 'Promise is pending',
-      success: 'Promise resolved 👌',
-      error: 'Promise rejected 🤯',
+    setIsPending(true);
+    await toast.promise(sendTelegramMessage(data), {
+      pending: {
+        render() {
+          return messages.queryPending;
+        },
+        type: 'info',
+      },
+      success: {
+        render() {
+          return messages.queryResolved;
+        },
+      },
+      error: {
+        render({ data }) {
+          return `${messages.queryRejected}: ${data.message}`;
+        },
+      },
     });
-    // try {
-    //   await sendTelegramMessage(data);
-    //   reset();
-    // } catch (error) {
-    //   console.log(`Помилка: ${error}`);
-    // }
+    setIsPending(false);
   };
-
+  console.log({ isPending });
   return (
     <>
-      {' '}
       <form
         className={`flex flex-col max-w-[424px] p-[16px] md:px-[64px] md:py-[36px] rounded-[24px] bg-block ${className}`}
         onSubmit={handleSubmit(onSubmit)}
@@ -97,10 +106,15 @@ export const CallbackForm = ({ className }) => {
         {/* <button type="submit">Submit</button> */}
         <Button
           className="w-full md:w-[147px] mt-[5px] md:ml-auto"
-          label={'Відправити'}
+          label={messages.buttonSubmitLabel}
+          disabled={isPending}
         ></Button>
       </form>
-      <ToastContainer />
+      <ToastContainer
+        theme="colored"
+        pauseOnFocusLoss={false}
+        pauseOnHover={false}
+      />
     </>
   );
 };
