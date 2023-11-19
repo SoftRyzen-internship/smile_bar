@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import { TabItem } from '../TabItem/TabItem';
 
-export const TabList = ({ data, isBenefit = false }) => {
+export const TabList = ({ data, isBenefit = false, className }) => {
   const [open, setOpen] = useState(false);
 
   const toggle = index => {
@@ -15,7 +15,11 @@ export const TabList = ({ data, isBenefit = false }) => {
     setOpen(index);
   };
   return (
-    <ul className={`${isBenefit ? 'max-w-[708px]' : 'max-w-[892px]'}`}>
+    <ul
+      className={`${
+        isBenefit ? 'max-w-[708px]' : 'max-w-[892px]'
+      } ${className}`}
+    >
       {data.map((data, index) => (
         <TabItem
           key={index}
@@ -30,7 +34,6 @@ export const TabList = ({ data, isBenefit = false }) => {
 };
 
 TabItem.propTypes = {
-  data: PropTypes.object.isRequired,
   isBenefit: PropTypes.bool,
   data: PropTypes.shape({
     id: PropTypes.number.isRequired,
@@ -39,5 +42,6 @@ TabItem.propTypes = {
     addition: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
     link: PropTypes.string,
   }).isRequired,
+  className: PropTypes.node,
 };
 

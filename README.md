@@ -115,11 +115,11 @@ is a list of more common components and their API.
 This is example of API for component `Title` and `Paragraph`
 
 - ### Title
-  Uses: for a section title
 
-| Prop       | Default     | Description                |
-| ---------- | ----------- | -------------------------- |
-| `children` | `undefined` | required, any text content |
+| Prop        | Default     | Description                                   |
+| ----------- | ----------- | --------------------------------------------- |
+| `children`  | `undefined` | required, any text content                    |
+| `className` | " "         | add custom or additional css class you'd need |
 
 - ### Paragraph
 
@@ -163,11 +163,12 @@ This is example of API for component `Title` and `Paragraph`
 
 - ### Section
 
-| Prop        | Default     | Description                                   |
-| ----------- | ----------- | --------------------------------------------- |
-| `title`     | `undefined` | required, string, text for title              |
-| `children`  | `undefined` | required, any content                         |
-| `className` | `""`        | add custom or additional css class you'd need |
+| Prop           | Default     | Description                                     |
+| -------------- | ----------- | ----------------------------------------------- |
+| `title`        | `undefined` | required, string, text for title                |
+| `children`     | `undefined` | required, any content                           |
+| `className`    | `""`        | add for section additional css class you'd need |
+| `classToTitle` | `""`        | add for title additional css class you'd need   |
 
 - ### Slider
 
@@ -187,6 +188,7 @@ This is example of API for component `Title` and `Paragraph`
 |             |             | - link (string)                          |
 | `isBenefit` | `false`     | `true` - for section "Benefits",         |
 |             |             | `false` - for section "Question-Answers" |
+| `children`  | `undefined` | add additional css class you'd need      |
 
 ### InputMessage
 

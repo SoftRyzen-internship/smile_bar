@@ -5,7 +5,7 @@ import heroImage from '../../../public/hero.webp';
 export const HeroSection = () => {
   const { title, subtitle, alt } = data;
   return (
-    <section className="relative overflow-x-hidden xl:pt-[24px]">
+    <section className="relative  pb-[18px] md:pb-6 xl:pb-10">
       <div className="container">
         <div className="relative flex flex-col xl:items-end gap-[8px] md:gap-[4px] xl:gap-[16px] px-[16px] xl:px-[36px] pt-[24px] xl:pb-[170px] xl:pt-[146px] bg-heroBg backdrop-blur-[10px] rounded-[36px] z-10">
           <h1 className="mx-auto xl:ml-0 max-w-[288px] md:max-w-none md:w-full xl:w-[702px] text-[24px] md:text-[36px] xl:text-[60px] font-bold leading-[1.2] text-center xl:text-left order-2">
