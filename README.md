@@ -163,11 +163,12 @@ This is example of API for component `Title` and `Paragraph`
 
 - ### Section
 
-| Prop        | Default     | Description                                   |
-| ----------- | ----------- | --------------------------------------------- |
-| `title`     | `undefined` | required, string, text for title              |
-| `children`  | `undefined` | required, any content                         |
-| `className` | `""`        | add custom or additional css class you'd need |
+| Prop           | Default     | Description                                     |
+| -------------- | ----------- | ----------------------------------------------- |
+| `title`        | `undefined` | required, string, text for title                |
+| `children`     | `undefined` | required, any content                           |
+| `className`    | `""`        | add for section additional css class you'd need |
+| `classToTitle` | `""`        | add for title additional css class you'd need   |
 
 - ### Slider
 
