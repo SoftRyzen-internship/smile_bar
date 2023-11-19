@@ -41,6 +41,7 @@ export const CallbackForm = ({ className }) => {
       },
       success: {
         render() {
+          reset();
           return messages.queryResolved;
         },
       },
