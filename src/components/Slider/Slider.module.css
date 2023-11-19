@@ -40,12 +40,14 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .slick-slide {
-    transform: scale(0.7);
-  }
 
-    .slick-slide.slick-center {
+
+   .centralMode .slick-slide.slick-center {
 
     transform: scale(1);
+  }
+
+  .centralMode .slick-slide {
+    transform: scale(0.7);
   }
 }
