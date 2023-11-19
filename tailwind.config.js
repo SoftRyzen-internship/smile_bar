@@ -45,6 +45,7 @@ module.exports = {
         //btn-colors
         btn: '#C3C7F4',
         btnHover: '#9FA4DF',
+        btnDisabled: '#D3D3D3',
       },
       backgroundImage: {
         serviceGradient:
