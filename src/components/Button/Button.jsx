@@ -1,11 +1,15 @@
 import PropTypes from 'prop-types';
 
-export const Button = ({ label, disabled = false, className = '' }) => {
+export const Button = ({ label, disabled = true, className = '' }) => {
   return (
     <button
       type="submit"
-      className={`rounded-lg transition duration-300 ease-in  bg-btn hover:bg-btnHover  focus:bg-btnHover cursor-pointer py-3 px-6 text-base font-medium ${className}`}
       disabled={disabled}
+      className={`rounded-lg transition duration-300 ease-in py-3 px-6 text-base font-medium ${
+        disabled
+          ? 'cursor-auto bg-btnDisabled'
+          : 'bg-btn hover:bg-btnHover cursor-pointer focus:bg-btnHover'
+      } ${className} `}
     >
       {label}
     </button>
