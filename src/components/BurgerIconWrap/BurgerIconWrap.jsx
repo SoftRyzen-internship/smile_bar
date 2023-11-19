@@ -7,7 +7,7 @@ export const BurgerIconWrap = ({ setMenuShow, open, children }) => {
     <div
       className="p-3 cursor-pointer"
       aria-label={
-        open ? labelBurger.map(el => el.open) : labelBurger.map(el => el.close)
+        open ? labelBurger.map(el => el.close) : labelBurger.map(el => el.open)
       }
       onClick={() => setMenuShow()}
     >
