@@ -1,4 +1,4 @@
-const phoneNormalize = value => {
+export const phoneNormalize = value => {
   if (value.match(/^[+]+[\D]*$/gm)) {
     return '+';
   }
@@ -17,5 +17,3 @@ const phoneNormalize = value => {
     }, [])
     .join('');
 };
-
-export default phoneNormalize;
