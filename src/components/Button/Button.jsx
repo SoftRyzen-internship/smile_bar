@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export const Button = ({ label, disabled = true, className = '' }) => {
+export const Button = ({ children, disabled = true, className = '' }) => {
   return (
     <button
       type="submit"
@@ -11,13 +11,13 @@ export const Button = ({ label, disabled = true, className = '' }) => {
           : 'bg-btn hover:bg-btnHover cursor-pointer focus:bg-btnHover'
       } ${className} `}
     >
-      {label}
+      {children}
     </button>
   );
 };
 
 Button.propTypes = {
-  label: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   disabled: PropTypes.bool,
   className: PropTypes.string,
 };
