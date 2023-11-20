@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Image from 'next/image';
-import labelLogo from '../../data/labelLogo.json';
+import labelLogo from '@/data/labelLogo.json';
 
 export const Logo = ({ className }) => {
   return (
