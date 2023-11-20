@@ -3,6 +3,7 @@ import '@/styles/globals.css';
 
 import { Header } from '@/sections/Header';
 import { Footer } from '@/sections/Footer';
+import { meta } from '@/data/metadata';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -10,10 +11,7 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
 });
 
-export const metadata = {
-  title: 'SmileBar у Львові',
-  description: 'Твій шлях до білосніжної усмішки починається тут',
-};
+export const metadata = meta;
 
 export default function RootLayout({ children }) {
   return (
