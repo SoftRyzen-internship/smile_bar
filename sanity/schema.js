@@ -42,9 +42,9 @@ export const schema = {
               fields: [
                 {
                   type: 'string',
-                  name: 'Title',
+                  name: 'title',
                 },
-                { type: 'string', name: 'Value' },
+                { type: 'string', name: 'value' },
               ],
             },
           ],

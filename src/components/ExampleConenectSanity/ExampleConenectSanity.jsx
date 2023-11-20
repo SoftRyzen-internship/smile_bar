@@ -1,5 +1,5 @@
 import { client } from '../../../sanity/lib/client';
-export const GetProduct = async () => {
+export const ExampleConenectSanity = async () => {
   const query = `*[_type=="services"]{title, description, list, price, image}`;
   const services = await client.fetch(query);
   console.log(services);
