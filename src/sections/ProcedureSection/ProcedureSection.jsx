@@ -6,7 +6,7 @@ import React from 'react';
 
 export const ProcedureSection = () => {
   return (
-    <Section title="Title">
+    <Section id="Procedure" title="Title">
       <Slider className="notCentral" centralMode={false} infinite={false}>
         <ProcedureList />
       </Slider>
