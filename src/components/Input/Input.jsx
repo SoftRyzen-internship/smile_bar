@@ -1,4 +1,4 @@
-import { phoneNormalize } from '@/utils';
+import { nameNormalize, phoneNormalize } from '@/utils';
 import PropTypes from 'prop-types';
 
 export const Input = ({
@@ -47,7 +47,7 @@ export const Input = ({
     return fn;
   };
   const onChangeProps = {
-    onChange: getHandleChange(typeIsPhone && phoneNormalize),
+    onChange: getHandleChange(typeIsPhone ? phoneNormalize : nameNormalize),
   };
 
   return (
