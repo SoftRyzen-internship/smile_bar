@@ -7,32 +7,44 @@ export const schema = {
       fields: [
         {
           name: 'title',
-          title: 'Title',
+          title: 'Назва процедури',
           type: 'string',
+          options: {
+            readOnly: false, // Дозволяє редагування
+          },
           validation: Rule => [
             Rule.required()
               .min(3)
-              .error('A title of min. 3 characters is required'),
+              .error('The minimum title length is 3 characters'),
             Rule.max(50).warning('Shorter titles are usually better'),
           ],
         },
         {
-          title: 'Description',
+          title: 'Опис процедури',
           name: 'description',
           type: 'text',
           validation: Rule => Rule.required(),
+          options: {
+            readOnly: false, // Дозволяє редагування
+          },
         },
         {
           name: 'list',
           type: 'array',
-          title: 'List',
+          title: 'Інформація про послугу',
+          options: {
+            readOnly: false, // Дозволяє редагування
+          },
           of: [
             {
               type: 'object',
               name: 'Add',
               fields: [
-                { type: 'string', name: 'Title' },
-                { type: 'string', name: 'Value' },
+                {
+                  type: 'string',
+                  name: 'title',
+                },
+                { type: 'string', name: 'value' },
               ],
             },
           ],
@@ -40,15 +52,19 @@ export const schema = {
         {
           name: 'price',
           type: 'number',
-          title: 'Price',
+          title: 'Ціна',
+          options: {
+            readOnly: false, // Дозволяє редагування
+          },
         },
         {
           name: 'image',
-          title: 'image',
+          title: 'Зоображення',
           type: 'image',
 
           options: {
             hotspot: true, // <-- Defaults to false
+            readOnly: false,
           },
           fields: [
             {
