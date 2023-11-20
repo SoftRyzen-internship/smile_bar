@@ -5,7 +5,7 @@ import React from 'react';
 
 export const TeethPhoto = () => {
   return (
-    <Section title="Результати">
+    <Section id="Result" title="Результати">
       <Slider>
         <TeethGallery />
       </Slider>

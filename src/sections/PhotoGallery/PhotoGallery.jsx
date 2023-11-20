@@ -5,7 +5,7 @@ import React from 'react';
 
 export const PhotoGallery = () => {
   return (
-    <Section title="Фотогалерея">
+    <Section id="PhotoGallery" title="Фотогалерея">
       <Slider>
         <SmileGallery />
       </Slider>
