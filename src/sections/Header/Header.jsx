@@ -12,15 +12,15 @@ import { BurgerIconWrap } from '@/components/BurgerIconWrap/BurgerIconWrap';
 
 export const Header = () => {
   const [menuShow, setMenuShow] = useState(false);
-  // useEffect(() => {
-  //   if (menuShow) {
-  //     document.body.classList.add('isModalShow');
-  //   } else {
-  //     document.body.classList.remove('isModalShow');
-  //   }
-  // }, [modalShow]);
+  useEffect(() => {
+    if (menuShow) {
+      document.body.classList.add('isMenuShow');
+    } else {
+      document.body.classList.remove('isMenuShow');
+    }
+  }, [menuShow]);
   return (
-    <header className="relative w-full xl:pb-6">
+    <header className="relative w-full pt-9 xl:pb-6">
       {menuShow ? (
         <BurgerMenu isShow={menuShow} onClose={() => setMenuShow(false)} />
       ) : null}
