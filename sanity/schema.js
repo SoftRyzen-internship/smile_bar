@@ -10,7 +10,7 @@ export const schema = {
           title: 'Назва процедури',
           type: 'string',
           options: {
-            readOnly: false, // Дозволяє редагування
+            readOnly: false,
           },
           validation: Rule => [
             Rule.required()
@@ -25,7 +25,7 @@ export const schema = {
           type: 'text',
           validation: Rule => Rule.required(),
           options: {
-            readOnly: false, // Дозволяє редагування
+            readOnly: false,
           },
         },
         {
@@ -33,20 +33,21 @@ export const schema = {
           type: 'array',
           title: 'Інформація про послугу',
           options: {
-            readOnly: false, // Дозволяє редагування
+            readOnly: false,
           },
           of: [
-            {
-              type: 'object',
-              name: 'Add',
-              fields: [
-                {
-                  type: 'string',
-                  name: 'title',
-                },
-                { type: 'string', name: 'value' },
-              ],
-            },
+            { title: 'Тривалість процедури:', type: 'string', name: 'time' },
+            { title: 'Освітлення:', type: 'string', name: 'lighting' },
+            { title: 'Гель наноситься:', type: 'string', name: 'gel' },
+            { title: 'Результат:', type: 'string', name: 'result' },
+          ],
+          validation: Rule => [
+            Rule.custom(fields => {
+              if (fields.length !== 4) {
+                return 'Кількість заповнених полів повинна дорівнювати 4';
+              }
+              return true;
+            }),
           ],
         },
         {
@@ -54,7 +55,7 @@ export const schema = {
           type: 'number',
           title: 'Ціна',
           options: {
-            readOnly: false, // Дозволяє редагування
+            readOnly: false,
           },
         },
         {
@@ -63,14 +64,14 @@ export const schema = {
           type: 'image',
 
           options: {
-            hotspot: true, // <-- Defaults to false
+            hotspot: true,
             readOnly: false,
           },
           fields: [
             {
               name: 'caption',
               type: 'string',
-              title: 'Caption',
+              title: 'Підпис для фото',
             },
           ],
         },
