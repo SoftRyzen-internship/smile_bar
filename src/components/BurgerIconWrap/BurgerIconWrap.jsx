@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 
-import labelBurger from '../../data/labelBurger.json';
+import labelBurger from '@/data/labelBurger.json';
 
 export const BurgerIconWrap = ({ setMenuShow, open, children }) => {
   return (
-    <div
+    <button
       className="p-3 cursor-pointer"
       aria-label={
         open ? labelBurger.map(el => el.close) : labelBurger.map(el => el.open)
@@ -12,7 +12,7 @@ export const BurgerIconWrap = ({ setMenuShow, open, children }) => {
       onClick={() => setMenuShow()}
     >
       {children}
-    </div>
+    </button>
   );
 };
 
