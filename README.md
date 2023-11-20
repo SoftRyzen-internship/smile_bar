@@ -116,13 +116,10 @@ This is example of API for component `Title` and `Paragraph`
 
 - ### Title
 
-| Prop        | Default     | Description                                     |
-| ----------- | ----------- | ----------------------------------------------- |
-| `tag`       | `h2`        | choose the tag of title you'd need: `h1` - `h3` |
-| `variant`   | `primary`   | `main`, `primary`, `secondary`, `tertiary`      |
-| `children`  | `undefined` | required, any content                           |
-| `className` | `undefined` | add custom or additional css class you'd need   |
-| `shadow`    | `undefined` | add text as a shadow decoration of the element  |
+| Prop        | Default     | Description                                   |
+| ----------- | ----------- | --------------------------------------------- |
+| `children`  | `undefined` | required, any text content                    |
+| `className` | " "         | add custom or additional css class you'd need |
 
 - ### Paragraph
 
@@ -131,3 +128,79 @@ This is example of API for component `Title` and `Paragraph`
 | `variant`   | `normal`    | `normal`, `large`, `small`                    |
 | `children`  | `undefined` | required, any content                         |
 | `className` | `undefined` | add custom or additional css class you'd need |
+
+- ### Logo
+
+| Prop        | Default                                 | Description                     |
+| ----------- | --------------------------------------- | ------------------------------- |
+| `className` | `w-[68px] h-12 xl:w-[90px] xl:h-[62px]` | add custom css class you'd need |
+
+- ### Button
+
+| Prop        | Default     | Description                                   |
+| ----------- | ----------- | --------------------------------------------- |
+| `children`  | `undefined` | required, any content                         |
+| `disabled`  | `true`      | boolean value of button activity              |
+| `className` | `*`         | add custom or additional css class you'd need |
+
+\*`rounded-lg transition duration-300 ease-in  bg-btn hover:bg-btnHover  cursor-pointer py-3 px-6 text-base font-medium`
+
+- ### Input
+
+| Prop              | Default     | Description                                                                                           |
+| ----------------- | ----------- | ----------------------------------------------------------------------------------------------------- |
+| `name`            | `undefined` | required, unique(!!!) name for input element of component                                             |
+| `labelText`       | `""`        | text for label                                                                                        |
+| `placeholderText` | `""`        | text for placeholder                                                                                  |
+| `type`            | `undefined` | required, input type: one of 'name' or 'phone'                                                        |
+| `setValue`        | `undefined` | required, function with same name from useForm()(react-hook-form)                                     |
+| `register`        | `undefined` | required, function with same name from useForm()(react-hook-form)                                     |
+| `errors`          | `undefined` | required, error object with same name from useForm()(react-hook-form)                                 |
+| `errorMessages`   | `{}`        | custom error message, object with optional string fields: required, minLength, maxLength and pattern. |
+| `className`       | `*`         | add custom or additional css class for wrapper you'd need                                             |
+
+\*`The component needs a <form> wrapper and some outputs from the hook useForm()  from the React-hook-form library`
+
+- ### Section
+
+| Prop           | Default     | Description                                     |
+| -------------- | ----------- | ----------------------------------------------- |
+| `title`        | `undefined` | required, string, text for title                |
+| `children`     | `undefined` | required, any content                           |
+| `className`    | `""`        | add for section additional css class you'd need |
+| `classToTitle` | `""`        | add for title additional css class you'd need   |
+
+- ### Slider
+
+| Prop       | Default     | Description           |
+| ---------- | ----------- | --------------------- |
+| `children` | `undefined` | required, any content |
+
+- ### TabList
+
+| Prop        | Default     | Description                              |
+| ----------- | ----------- | ---------------------------------------- |
+| `data`      | `undefined` | required, object of:                     |
+|             |             | - id (number, required),                 |
+|             |             | - title (string, required),              |
+|             |             | - description (string, required),        |
+|             |             | - addition (array),                      |
+|             |             | - link (string)                          |
+| `isBenefit` | `false`     | `true` - for section "Benefits",         |
+|             |             | `false` - for section "Question-Answers" |
+| `children`  | `undefined` | add additional css class you'd need      |
+
+### InputMessage
+
+| Prop              | Default     | Description                                                           |
+| ----------------- | ----------- | --------------------------------------------------------------------- |
+| `name`            | `undefined` | required, unique(!!!) name for input element of component             |
+| `labelText`       | `""`        | text for label                                                        |
+| `placeholderText` | `""`        | text for placeholder                                                  |
+| `setValue`        | `undefined` | required, function with same name from useForm()(react-hook-form)     |
+| `register`        | `undefined` | required, function with same name from useForm()(react-hook-form)     |
+| `errors`          | `undefined` | required, error object with same name from useForm()(react-hook-form) |
+| `errorMessages`   | `{}`        | custom error message, object with optional string fields: maxLength   |
+| `className`       | `*`         | add custom or additional css class for wrapper you'd need             |
+
+\*`The component needs a <form> wrapper and some outputs from the hook useForm()  from the React-hook-form library`
