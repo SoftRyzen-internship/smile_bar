@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import React from 'react';
 import img from '../../../public/SliderImg/photo.webp';
@@ -6,22 +8,25 @@ import ClockIcon from '/public/clock.svg';
 import SunIcon from '/public/sun.svg';
 import ForwardIcon from '/public/forward.svg';
 import FlashIcon from '/public/flash.svg';
+import { urlForImage } from '../../../sanity/lib/image';
 
-export const Procedure = () => {
+export const Procedure = ({ service }) => {
+  const { title, price, description, image } = service;
+
   return (
     <div className=" group bg-transparent cursor-pointer [perspective:1000px]">
-      <div className="relative w-[390px] h-[482px] z-auto [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] duration-1000  ">
+      <div className="relative mx-auto w-auto h-[502px] md:w-[342px] xl:w-[390px] xl:h-[482px] z-auto [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] duration-1000  ">
         <div className="absolute [backface-visibility:hidden] [transform:rotateY(180deg)] w-full h-full inset-0">
           <div className="w-full h-full absolute z-10 bg-gradient-to-b from-white/0 to-white/75"></div>
           <Image
             className="object-cover rounded-3xl w-full h-full"
-            src={img}
+            src={urlForImage(image).url()}
             alt="fyu"
             width={300}
             height={300}
           />
-          <p className="left-[137px] top-[413px] absolute z-20 text-right text-stone-900 text-2xl font-bold font-['Montserrat'] uppercase">
-            EXPRESS
+          <p className=" left-1/2 top-[413px] translate-x-[-50%] absolute z-20 text-right text-stone-900 text-2xl font-bold font-['Montserrat'] uppercase">
+            {title}
           </p>
         </div>
         <div className="flex flex-col justify-between p-9 bg-zinc-400 bg-opacity-10 rounded-3xl backdrop-blur-[25px] absolute inset-0 w-full h-full [backface-visibility:hidden] text-primary font-sans">
@@ -30,13 +35,11 @@ export const Procedure = () => {
               <p className="text-right  text-base uppercase tracking-[16px]">
                 процедура
               </p>
-              <p className="text-right text-2xl font-bold uppercase">Express</p>
+              <p className="text-right text-2xl font-bold uppercase">{title}</p>
             </div>
             <div>
-              <p className="text-justify text-base ">
-                Ідеальний вибір для тих, хто шукає швидкий та ефективний
-                результат. Підходить для легкого відбілювання та освітлення
-                усмішки.
+              <p className="text-justify text-base leading-tight ">
+                {description}
               </p>
             </div>
           </div>
@@ -68,10 +71,10 @@ export const Procedure = () => {
                 </p>
               </div>
             </div>
-            <div className=" pt-5 flex gap-2 justify-center items-center ">
+            <div className=" pt-6 flex gap-2 justify-center items-center ">
               <DollarIcon width={24} height={24} />
               <p className="text-2xl font-medium">
-                Ціна: <span className="font-normal">1000 грн</span>
+                Ціна: <span className="font-normal">{price} грн</span>
               </p>
             </div>
           </div>
