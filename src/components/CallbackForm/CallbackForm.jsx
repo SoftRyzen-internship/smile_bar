@@ -9,8 +9,8 @@ import { Button } from '../Button';
 import { sendTelegramMessage } from '@/utils';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import messages from '../../data/telegram.json';
-import data from '../../data/callbackForm.json';
+import messages from '@/data/telegram.json';
+import data from '@/data/callbackForm.json';
 import { loadGetInitialProps } from 'next/dist/shared/lib/utils';
 
 const LOCAL_STORAGE_KEY = 'callback';
