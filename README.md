@@ -172,9 +172,12 @@ This is example of API for component `Title` and `Paragraph`
 
 - ### Slider
 
-| Prop       | Default     | Description           |
-| ---------- | ----------- | --------------------- |
-| `children` | `undefined` | required, any content |
+| Prop          | Default       | Description                             |
+| ------------- | ------------- | --------------------------------------- |
+| `children`    | `undefined`   | required, any content                   |
+| `centralMode` | `true`        | boolean value of Central Mode           |
+| `className`   | `centralMode` | add for slider additional css className |
+| `infinite`    | `true`        | boolean value of infinite               |
 
 - ### TabList
 
