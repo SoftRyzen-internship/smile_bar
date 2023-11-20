@@ -1,5 +1,5 @@
 import axios from 'axios';
-import messages from '../data/telegram.json';
+import messages from '@/data/telegram.json';
 const TOKEN = process.env.NEXT_PUBLIC_TELEGRAM_TOKEN;
 const CHAT_ID = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
 axios.defaults.baseURL = `https://api.telegram.org/bot${TOKEN}`;
