@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "type": "phone",
+    "icon": "Call",
+    "link": "tel:+380688058744",
+    "text": "+38 068 805 87 44"
+  },
+  {
+    "id": 2,
+    "type": "location",
+    "icon": "Location",
+    "link": "https://maps.app.goo.gl/ovKAqKwx2SayMXCv7",
+    "text": "м.Львів, вул.Івана Франка, 3"
+  },
+  {
+    "id": 3,
+    "type": "social",
+    "icon": "Instagram",
+    "link": "https://instagram.com/smilebar_lviv?igshid=MzRlODBiNWFlZA==",
+    "text": "Instagram"
+  },
+  {
+    "id": 4,
+    "type": "social",
+    "icon": "Facebook",
+    "link": "https://m.facebook.com/smilebar.lviv",
+    "text": "Facebook"
+  }
+]
