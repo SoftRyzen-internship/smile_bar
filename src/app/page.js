@@ -12,14 +12,14 @@ import { ContactsSection } from '@/sections/ContactsSection/';
 export default function Home() {
   return (
     <>
-      <HeroSection />
+      {/* <HeroSection />
       <Benefits />
       <ProcedureSection />
       <PhotoGallery />
       <Questions />
-      <TeethPhoto />
+      <TeethPhoto /> */}
       <ContactsSection />
-      <ExampleConenectSanity />
+      {/* <ExampleConenectSanity /> */}
     </>
   );
 }

@@ -1,7 +1,7 @@
 {
   "greetingsMessage": "Повідомлення з сайту",
   "queryPending": "Відправка повідомлення",
-  "queryResolved": "Повідомлення відправлено",
-  "queryRejected": "Помилка",
-  "noDataForConnect": "Нема куди відправляти"
+  "queryResolved": "Успішно відправлено",
+  "queryRejected": "Упс, щось пішло не так. Спробуйте ще раз",
+  "noDataForConnect": "Упс, щось пішло не так. Спробуйте ще раз"
 }

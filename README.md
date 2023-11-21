@@ -206,4 +206,36 @@ This is example of API for component `Title` and `Paragraph`
 | `errorMessages`   | `{}`        | custom error message, object with optional string fields: maxLength   |
 | `className`       | `*`         | add custom or additional css class for wrapper you'd need             |
 
-\*`The component needs a <form> wrapper and some outputs from the hook useForm()  from the React-hook-form library`
+\*`The component needs a <form> wrapper and some outputs from the hook useForm()
+from the React-hook-form library### InputMessage
+
+### Icon
+
+| Prop        | Default     | Description                                               |
+| ----------- | ----------- | --------------------------------------------------------- |
+| `name`      | `undefined` | required, icon name\*                                     |
+| `className` | `*`         | add custom or additional css class for wrapper you'd need |
+
+\* - now one of: Call, Location, Instagram, Facebook
+
+### ContactItem
+
+| Prop        | Default     | Description                                               |
+| ----------- | ----------- | --------------------------------------------------------- |
+| `type`      | `undefined` | required, string, one of: 'phone', 'location', 'social'   |
+| `icon`      | `undefined` | required, icon name for component 'Icon'                  |
+| `text`      | `undefined` | required, text label for link                             |
+| `link`      | `undefined` | required, link for props 'href'                           |
+| `className` | `*`         | add custom or additional css class for wrapper you'd need |
+
+### ContactBlock
+
+| Prop    | Default     | Description                                                     |
+| ------- | ----------- | --------------------------------------------------------------- |
+| `title` | `undefined` | Group title                                                     |
+| `items` | []          | required, array of object of:                                   |
+|         |             | -id (number or string),                                         |
+|         |             | -type (required, string, one of: 'phone', 'location', 'social') |
+|         |             | -icon (required, string) name for component 'Icon'              |
+|         |             | -text (required, string), text label for link                   |
+|         |             | -link (required, string), link for props 'href' in tag <a>      |

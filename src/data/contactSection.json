@@ -3,7 +3,7 @@
   "contactsBlock": [
     { "id": 1, "title": "Телефон", "type": "phone" },
     { "id": 2, "title": "Адреса", "type": "location" },
-    { "id": 2, "title": "Соціальна мережа", "type": "social" }
+    { "id": 3, "title": "Соціальна мережа", "type": "social" }
   ],
   "callbackForm": {
     "name": {

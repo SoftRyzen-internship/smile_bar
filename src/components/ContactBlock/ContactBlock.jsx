@@ -1,12 +1,14 @@
 import { ContactItem } from '../ContactItem';
-import { Icon } from '../Icon';
+import PropTypes from 'prop-types';
 
-export const ContactBlock = ({ title, items }) => {
+export const ContactBlock = ({ title, items = [] }) => {
   return (
     <>
-      <p className="text-[20px] leading-[1.2] font-medium text-center md:text-left ">
-        {title}
-      </p>
+      {title && (
+        <p className="text-[20px] leading-[1.2] font-medium text-center md:text-left ">
+          {title}
+        </p>
+      )}
       <ul className="flex flex-col items-center md:items-start gap-[8px]">
         {items.map(({ id, link, icon, text, type }) => (
           <li key={id}>
@@ -16,4 +18,17 @@ export const ContactBlock = ({ title, items }) => {
       </ul>
     </>
   );
+};
+
+ContactBlock.proptypes = {
+  title: PropTypes.string,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      type: PropTypes.oneOf(['phone', 'location', 'social']),
+      icon: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+    }),
+  ),
 };

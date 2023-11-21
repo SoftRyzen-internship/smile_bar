@@ -1,4 +1,5 @@
 import { Icon } from '../Icon';
+import PropTypes from 'prop-types';
 
 export const ContactItem = ({ link, icon, text, type, className }) => {
   return (
@@ -20,4 +21,12 @@ export const ContactItem = ({ link, icon, text, type, className }) => {
       </p>
     </a>
   );
+};
+
+ContactItem.proptypes = {
+  type: PropTypes.oneOf(['phone', 'location', 'social']),
+  icon: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };

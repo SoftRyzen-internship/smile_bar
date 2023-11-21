@@ -55,7 +55,7 @@ export const CallbackForm = ({ className }) => {
         },
         error: {
           render({ data }) {
-            return `${messages.queryRejected}: ${data.message}`;
+            return messages.queryRejected;
           },
         },
       });
