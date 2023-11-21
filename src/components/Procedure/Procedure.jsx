@@ -49,28 +49,28 @@ export const Procedure = ({ service }) => {
                 <ClockIcon width={24} height={24} />
                 <p className="text-base font-medium">
                   {procedureCard.map(item => item.duration)}
-                  <span className="font-normal">{list[0]}</span>
+                  <span className="font-normal">{list.time}</span>
                 </p>
               </div>
               <div className="flex gap-2">
                 <SunIcon width={24} height={24} />
                 <p className="text-base font-medium">
                   {procedureCard.map(item => item.light)}
-                  <span className="font-normal">{list[1]}</span>
+                  <span className="font-normal">{list.lighting}</span>
                 </p>
               </div>
               <div className="flex gap-2">
                 <ForwardIcon width={24} height={24} />
                 <p className="text-base font-medium">
                   {procedureCard.map(item => item.gel)}
-                  <span className="font-normal">{list[2]}</span>
+                  <span className="font-normal">{list.gel}</span>
                 </p>
               </div>
               <div className="flex gap-2">
                 <FlashIcon width={24} height={24} />
                 <p className="text-base font-medium">
                   {procedureCard.map(item => item.result)}
-                  <span className="font-normal">{list[3]}</span>
+                  <span className="font-normal">{list.result}</span>
                 </p>
               </div>
             </div>
