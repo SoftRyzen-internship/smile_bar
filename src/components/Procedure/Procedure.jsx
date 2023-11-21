@@ -11,8 +11,7 @@ import { urlForImage } from '../../../sanity/lib/image';
 import procedureCard from '@/data/procedureCard.json';
 
 export const Procedure = ({ service }) => {
-  const { title, price, description, image, info } = service;
-  console.log(service);
+  const { title, price, description, image, list } = service;
 
   return (
     <div className=" group bg-transparent cursor-pointer [perspective:1000px]">
