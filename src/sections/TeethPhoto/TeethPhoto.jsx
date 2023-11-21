@@ -1,7 +1,7 @@
 import { Section } from '@/components/Section';
 import { Slider } from '@/components/Slider';
 import React from 'react';
-import data from '../../data/teeth.json';
+import data from '@/data/teeth.json';
 import { Gallery } from '@/components/Gallery';
 
 export const TeethPhoto = () => {
