@@ -3,15 +3,20 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { sendTelegramMessage } from '@/utils';
+
 import { Input } from '../Input';
 import { InputMessage } from '../InputMessage';
 import { Button } from '../Button';
-import { sendTelegramMessage } from '@/utils';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import messages from '../../data/telegram.json';
+import messages from '@/data/telegram.json';
+import data from '@/data/callbackForm.json';
+import { loadGetInitialProps } from 'next/dist/shared/lib/utils';
 
 const LOCAL_STORAGE_KEY = 'callback';
+
+const { name, phone, message, buttonSubmit } = data;
 
 export const CallbackForm = ({ className }) => {
   const [isPending, setIsPending] = useState(false);
@@ -31,27 +36,31 @@ export const CallbackForm = ({ className }) => {
   });
 
   const onSubmit = async data => {
-    setIsPending(true);
-    await toast.promise(sendTelegramMessage(data), {
-      pending: {
-        render() {
-          return messages.queryPending;
+    try {
+      setIsPending(true);
+      await toast.promise(sendTelegramMessage(data), {
+        pending: {
+          render() {
+            return messages.queryPending;
+          },
+          type: 'info',
         },
-        type: 'info',
-      },
-      success: {
-        render() {
-          reset();
-          return messages.queryResolved;
+        success: {
+          render() {
+            reset();
+            return messages.queryResolved;
+          },
         },
-      },
-      error: {
-        render({ data }) {
-          return `${messages.queryRejected}: ${data.message}`;
+        error: {
+          render({ data }) {
+            return `${messages.queryRejected}: ${data.message}`;
+          },
         },
-      },
-    });
-    setIsPending(false);
+      });
+      setIsPending(false);
+    } catch {
+      setIsPending(false);
+    }
   };
 
   return (
@@ -63,53 +72,43 @@ export const CallbackForm = ({ className }) => {
         <Input
           className="mb-[-3px]"
           name="name"
-          labelText="Ім'я*"
-          placeholderText="Іван Іванов"
+          labelText={name.labelText}
+          placeholderText={name.placeholderText}
           type="name"
           setValue={setValue}
           register={register}
           errors={errors}
-          errorMessages={{
-            required: "Обов'язкове поле",
-            minLength: 'Мінімум одна буква',
-            maxLength: 'Максимум 70 символів',
-            pattern: "Невірне ім'я",
-          }}
+          errorMessages={name.errorMessages}
         />
 
         <Input
           className="mb-[-3px]"
           name="phone"
-          labelText="Телефон*"
-          placeholderText="+38 050 123 45 67"
+          labelText={phone.labelText}
+          placeholderText={phone.placeholderText}
           type="phone"
           setValue={setValue}
           register={register}
           errors={errors}
-          errorMessages={{
-            required: "Обов'язкове поле",
-            minLength: 'Мінімум 11 цифр',
-          }}
+          errorMessages={phone.errorMessages}
         />
         <InputMessage
           className="mb-[-3px]"
           name="message"
-          labelText="Повідомлення"
-          placeholderText="Ваше повідомлення..."
+          labelText={message.labelText}
+          placeholderText={message.placeholderText}
           setValue={setValue}
           register={register}
           errors={errors}
-          errorMessages={{
-            maxLength: 'Максимум 500 символів',
-          }}
+          errorMessages={message.errorMessages}
         />
 
-        {/* <button type="submit">Submit</button> */}
         <Button
           className="w-full md:w-[147px] mt-[5px] md:ml-auto"
-          label={messages.buttonSubmitLabel}
           disabled={isPending}
-        ></Button>
+        >
+          {buttonSubmit.labelText}
+        </Button>
       </form>
       <ToastContainer
         theme="colored"

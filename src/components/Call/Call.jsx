@@ -1,5 +1,5 @@
 import CallIcon from '/public/call.svg';
-import call from '../../data/call.json';
+import call from '@/data/call.json';
 
 export const Call = () => {
   return (
