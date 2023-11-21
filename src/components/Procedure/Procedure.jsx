@@ -11,7 +11,8 @@ import FlashIcon from '/public/flash.svg';
 import { urlForImage } from '../../../sanity/lib/image';
 
 export const Procedure = ({ service }) => {
-  const { title, price, description, image, list } = service;
+  const { title, price, description, image, info } = service;
+  console.log(service);
 
   return (
     <div className=" group bg-transparent cursor-pointer [perspective:1000px]">
@@ -48,27 +49,25 @@ export const Procedure = ({ service }) => {
               <div className="flex gap-2">
                 <ClockIcon width={24} height={24} />
                 <p className="text-base font-medium">
-                  Тривалість процедури:{' '}
-                  <span className="font-normal">{list[0]}</span>
+                  Тривалість процедури: <span className="font-normal">{}</span>
                 </p>
               </div>
               <div className="flex gap-2">
                 <SunIcon width={24} height={24} />
                 <p className="text-base font-medium">
-                  Освітлення: <span className="font-normal">{list[1]}</span>
+                  Освітлення: <span className="font-normal">{}</span>
                 </p>
               </div>
               <div className="flex gap-2">
                 <ForwardIcon width={24} height={24} />
                 <p className="text-base font-medium">
-                  Гель наноситься:{' '}
-                  <span className="font-normal">{list[2]}</span>
+                  Гель наноситься: <span className="font-normal">{}</span>
                 </p>
               </div>
               <div className="flex gap-2">
                 <FlashIcon width={24} height={24} />
                 <p className="text-base font-medium">
-                  Результат: <span className="font-normal">{list[3]}</span>
+                  Результат: <span className="font-normal">{}</span>
                 </p>
               </div>
             </div>

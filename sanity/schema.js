@@ -13,10 +13,8 @@ export const schema = {
             readOnly: false,
           },
           validation: Rule => [
-            Rule.required()
-              .min(3)
-              .error('The minimum title length is 3 characters'),
-            Rule.max(50).warning('Shorter titles are usually better'),
+            Rule.required().min(3).error('Мінімальна кількість символів 3'),
+            Rule.max(50).warning('Коротші заголовки виглядають краще'),
           ],
         },
         {
@@ -29,17 +27,30 @@ export const schema = {
           },
         },
         {
-          name: 'list',
-          type: 'array',
+          name: 'info',
+          type: 'object',
           title: 'Інформація про послугу',
-          options: {
-            readOnly: false,
-          },
-          of: [
-            { title: 'Тривалість процедури:', type: 'string', name: 'time' },
-            { title: 'Освітлення:', type: 'string', name: 'lighting' },
-            { title: 'Гель наноситься:', type: 'string', name: 'gel' },
-            { title: 'Результат:', type: 'string', name: 'result' },
+          fields: [
+            {
+              title: 'Тривалість процедури:',
+              name: 'time',
+              type: 'string',
+            },
+            {
+              title: 'Освітлення:',
+              name: 'lighting',
+              type: 'string',
+            },
+            {
+              title: 'Гель наноситься:',
+              name: 'gel',
+              type: 'string',
+            },
+            {
+              title: 'Результат:',
+              name: 'result',
+              type: 'string',
+            },
           ],
           validation: Rule => [
             Rule.custom(fields => {
@@ -54,6 +65,7 @@ export const schema = {
           name: 'price',
           type: 'number',
           title: 'Ціна',
+          validation: Rule => Rule.required(),
           options: {
             readOnly: false,
           },
@@ -62,7 +74,7 @@ export const schema = {
           name: 'image',
           title: 'Зоображення',
           type: 'image',
-
+          validation: Rule => Rule.required(),
           options: {
             hotspot: true,
             readOnly: false,
