@@ -19,7 +19,6 @@ export default function Home() {
       <Questions />
       <TeethPhoto />
       <ContactsSection />
-      <CallbackForm />
       <ExampleConenectSanity />
     </>
   );

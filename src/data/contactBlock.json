@@ -1,5 +1,0 @@
-[
-  { "id": 1, "title": "Телефон", "type": "phone" },
-  { "id": 2, "title": "Адреса", "type": "location" },
-  { "id": 2, "title": "Соціальна мережа", "type": "social" }
-]
