@@ -20,10 +20,11 @@ export const Header = () => {
     }
   }, [menuShow]);
   return (
-    <header className="relative w-full pt-9 xl:pb-6">
-      {menuShow ? (
-        <BurgerMenu isShow={menuShow} onClose={() => setMenuShow(false)} />
-      ) : null}
+    <header
+      className={` relative w-full pt-9 xl:pb-6  ${
+        menuShow && 'bg-white gradient h-screen z-[30]'
+      }`}
+    >
       <div className="container mx-auto flex items-center justify-between pb-9 xl:pb-0">
         <Logo />
         {menuShow ? (
@@ -45,6 +46,9 @@ export const Header = () => {
           <Call />
         </div>
       </div>
+      {menuShow ? (
+        <BurgerMenu isShow={menuShow} onClose={() => setMenuShow(false)} />
+      ) : null}
     </header>
   );
 };
