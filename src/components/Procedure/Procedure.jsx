@@ -15,7 +15,7 @@ export const Procedure = ({ service }) => {
 
   return (
     <div className=" group bg-transparent cursor-pointer [perspective:1000px]">
-      <div className="relative mx-auto w-auto h-[502px] md:w-[342px] xl:w-[390px] xl:h-[482px] z-auto [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] duration-1000  ">
+      <div className="relative mx-auto w-auto h-[502px] md:w-[342px] xl:w-[390px] xl:h-[482px] z-auto [transform-style:preserve-3d] xl:group-hover:[transform:rotateY(180deg)] duration-1000  ">
         <div className="absolute [backface-visibility:hidden] [transform:rotateY(180deg)] w-full h-full inset-0">
           <div className="w-full h-full absolute z-10 bg-gradient-to-b from-white/0 to-white/75"></div>
           <Image
@@ -77,7 +77,8 @@ export const Procedure = ({ service }) => {
             <div className=" pt-6 flex gap-2 justify-center items-center ">
               <DollarIcon width={24} height={24} />
               <p className="text-2xl font-medium">
-                Ціна: <span className="font-normal">{price} грн</span>
+                {procedureCard.map(item => item.price)}
+                <span className="font-normal">{price} грн</span>
               </p>
             </div>
           </div>
