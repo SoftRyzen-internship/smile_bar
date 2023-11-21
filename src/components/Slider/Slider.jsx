@@ -25,7 +25,7 @@ export const Slider = ({
           height: '24px',
           top: '100%',
           right: '50%',
-          transform: 'translate(32px, -20px)',
+          transform: 'translate(32px)',
         }}
         onClick={onClick}
       />
@@ -45,7 +45,7 @@ export const Slider = ({
           height: '24px',
           top: '100%',
           left: '50%',
-          transform: 'translate(-32px, -20px)',
+          transform: 'translate(-32px)',
         }}
         onClick={onClick}
       />

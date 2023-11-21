@@ -10,11 +10,13 @@ export const schema = {
           title: 'Назва процедури',
           type: 'string',
           options: {
-            readOnly: false,
+            readOnly: false, // Дозволяє редагування
           },
           validation: Rule => [
-            Rule.required().min(3).error('Мінімальна кількість символів 3'),
-            Rule.max(50).warning('Коротші заголовки виглядають краще'),
+            Rule.required()
+              .min(3)
+              .error('The minimum title length is 3 characters'),
+            Rule.max(50).warning('Shorter titles are usually better'),
           ],
         },
         {
@@ -23,33 +25,27 @@ export const schema = {
           type: 'text',
           validation: Rule => Rule.required(),
           options: {
-            readOnly: false,
+            readOnly: false, // Дозволяє редагування
           },
         },
         {
           name: 'list',
-          type: 'object',
+          type: 'array',
           title: 'Інформація про послугу',
-          fields: [
+          options: {
+            readOnly: false, // Дозволяє редагування
+          },
+          of: [
             {
-              title: 'Тривалість процедури:',
-              name: 'time',
-              type: 'string',
-            },
-            {
-              title: 'Освітлення:',
-              name: 'lighting',
-              type: 'string',
-            },
-            {
-              title: 'Гель наноситься:',
-              name: 'gel',
-              type: 'string',
-            },
-            {
-              title: 'Результат:',
-              name: 'result',
-              type: 'string',
+              type: 'object',
+              name: 'Add',
+              fields: [
+                {
+                  type: 'string',
+                  name: 'title',
+                },
+                { type: 'string', name: 'value' },
+              ],
             },
           ],
         },
@@ -57,25 +53,24 @@ export const schema = {
           name: 'price',
           type: 'number',
           title: 'Ціна',
-          validation: Rule => Rule.required(),
           options: {
-            readOnly: false,
+            readOnly: false, // Дозволяє редагування
           },
         },
         {
           name: 'image',
           title: 'Зоображення',
           type: 'image',
-          validation: Rule => Rule.required(),
+
           options: {
-            hotspot: true,
+            hotspot: true, // <-- Defaults to false
             readOnly: false,
           },
           fields: [
             {
               name: 'caption',
               type: 'string',
-              title: 'Підпис для фото',
+              title: 'Caption',
             },
           ],
         },

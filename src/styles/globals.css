@@ -17,7 +17,3 @@ body {
 html{
   scroll-behavior: smooth
 }
-
-.isMenuShow {
-  overflow: hidden;
-}
