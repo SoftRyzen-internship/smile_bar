@@ -1,11 +1,11 @@
 'use client';
 
-import { Procedure } from '@/components/Procedure/Procedure';
+import { Procedure } from '@/components/Procedure';
 import { Section } from '@/components/Section';
 import { Slider } from '@/components/Slider';
 import React, { useEffect, useState } from 'react';
 import { getServices } from '../../../sanity/fetch';
-import procedure from '../../data/procedure.json';
+import procedure from '@/data/procedure.json';
 
 export const ProcedureSection = () => {
   const [allService, setAllService] = useState('');
