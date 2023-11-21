@@ -18,7 +18,7 @@ export default function Home() {
       <Questions />
       <TeethPhoto />
       <CallbackForm />
-      <ExampleConenectSanity />
+      {/* <ExampleConenectSanity /> */}
     </>
   );
 }
