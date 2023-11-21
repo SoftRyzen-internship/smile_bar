@@ -27,7 +27,7 @@ export const schema = {
           },
         },
         {
-          name: 'info',
+          name: 'list',
           type: 'object',
           title: 'Інформація про послугу',
           fields: [
@@ -51,14 +51,6 @@ export const schema = {
               name: 'result',
               type: 'string',
             },
-          ],
-          validation: Rule => [
-            Rule.custom(fields => {
-              if (fields.length !== 4) {
-                return 'Кількість заповнених полів повинна дорівнювати 4';
-              }
-              return true;
-            }),
           ],
         },
         {
