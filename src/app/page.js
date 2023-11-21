@@ -6,8 +6,6 @@ import { TeethPhoto } from '@/sections/TeethPhoto';
 import { Questions } from '@/sections/Questions';
 import { ProcedureSection } from '@/sections/ProcedureSection';
 
-import { ExampleConenectSanity } from '@/components/ExampleConenectSanity';
-
 export default function Home() {
   return (
     <>
@@ -18,7 +16,6 @@ export default function Home() {
       <Questions />
       <TeethPhoto />
       <CallbackForm />
-      {/* <ExampleConenectSanity /> */}
     </>
   );
 }
