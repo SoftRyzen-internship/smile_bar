@@ -5,6 +5,7 @@ import { PhotoGallery } from '@/sections/PhotoGallery';
 import { TeethPhoto } from '@/sections/TeethPhoto';
 import { Questions } from '@/sections/Questions';
 import { ProcedureSection } from '@/sections/ProcedureSection';
+import { ContactsSection } from '@/sections/ContactsSection';
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
       <PhotoGallery />
       <Questions />
       <TeethPhoto />
-      <CallbackForm />
+      <ContactsSection />
     </>
   );
 }
