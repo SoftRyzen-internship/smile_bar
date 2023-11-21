@@ -2,13 +2,13 @@
 
 import Image from 'next/image';
 import React from 'react';
-import img from '../../../public/SliderImg/photo.webp';
 import DollarIcon from '/public/dollar.svg';
 import ClockIcon from '/public/clock.svg';
 import SunIcon from '/public/sun.svg';
 import ForwardIcon from '/public/forward.svg';
 import FlashIcon from '/public/flash.svg';
 import { urlForImage } from '../../../sanity/lib/image';
+import procedureCard from '@/data/procedureCard.json';
 
 export const Procedure = ({ service }) => {
   const { title, price, description, image, list } = service;
@@ -33,7 +33,7 @@ export const Procedure = ({ service }) => {
           <div className="flex-col  items-center  gap-6 inline-flex ">
             <div className="flex-col justify-start items-center gap-1 inline-flex">
               <p className="text-right  text-base uppercase tracking-[16px]">
-                процедура
+                {procedureCard.map(item => item.title)}
               </p>
               <p className="text-right text-2xl font-bold uppercase">{title}</p>
             </div>
@@ -48,27 +48,29 @@ export const Procedure = ({ service }) => {
               <div className="flex gap-2">
                 <ClockIcon width={24} height={24} />
                 <p className="text-base font-medium">
-                  Тривалість процедури:{' '}
+                  {procedureCard.map(item => item.duration)}
                   <span className="font-normal">{list[0]}</span>
                 </p>
               </div>
               <div className="flex gap-2">
                 <SunIcon width={24} height={24} />
                 <p className="text-base font-medium">
-                  Освітлення: <span className="font-normal">{list[1]}</span>
+                  {procedureCard.map(item => item.light)}
+                  <span className="font-normal">{list[1]}</span>
                 </p>
               </div>
               <div className="flex gap-2">
                 <ForwardIcon width={24} height={24} />
                 <p className="text-base font-medium">
-                  Гель наноситься:{' '}
+                  {procedureCard.map(item => item.gel)}
                   <span className="font-normal">{list[2]}</span>
                 </p>
               </div>
               <div className="flex gap-2">
                 <FlashIcon width={24} height={24} />
                 <p className="text-base font-medium">
-                  Результат: <span className="font-normal">{list[3]}</span>
+                  {procedureCard.map(item => item.result)}
+                  <span className="font-normal">{list[3]}</span>
                 </p>
               </div>
             </div>
