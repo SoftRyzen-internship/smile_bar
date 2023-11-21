@@ -6,20 +6,16 @@ import { TeethPhoto } from '@/sections/TeethPhoto';
 import { Questions } from '@/sections/Questions';
 import { ProcedureSection } from '@/sections/ProcedureSection';
 
-import { ExampleConenectSanity } from '@/components/ExampleConenectSanity';
-import { ContactsSection } from '@/sections/ContactsSection/';
-
 export default function Home() {
   return (
     <>
-      {/* <HeroSection />
+      <HeroSection />
       <Benefits />
       <ProcedureSection />
       <PhotoGallery />
       <Questions />
-      <TeethPhoto /> */}
-      <ContactsSection />
-      {/* <ExampleConenectSanity /> */}
+      <TeethPhoto />
+      <CallbackForm />
     </>
   );
 }
