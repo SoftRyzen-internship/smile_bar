@@ -3,10 +3,12 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { TabItem } from '../TabItem/TabItem';
+// import { TabItem } from '../TabItem/TabItem';
+// import { Tab } from '../Tab';
+import { TabItem } from '../TabItem/TabItemNEW';
 
 export const TabList = ({ data, isBenefit = false, className }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(null);
 
   const toggle = index => {
     if (open === index) {
