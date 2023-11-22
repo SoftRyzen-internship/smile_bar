@@ -17,7 +17,7 @@ export const Procedure = ({ service }) => {
     <div className=" group bg-transparent cursor-pointer [perspective:1000px]">
       <div className="relative mx-auto w-auto h-[502px] md:w-[342px] xl:w-[390px] xl:h-[482px] z-auto [transform-style:preserve-3d] xl:group-hover:[transform:rotateY(180deg)] duration-1000  ">
         <div className="absolute [backface-visibility:hidden] [transform:rotateY(180deg)] xl:[transform:rotateY(0deg)] w-full h-full inset-0">
-          <div className="w-full h-full absolute z-10 bg-gradient-to-b from-white/0 to-white/75"></div>
+          <div className="w-full h-full absolute z-10 bg-gradient-to-b from-white/0 from-50% to-white/75"></div>
           <Image
             className="object-cover rounded-3xl w-full h-full"
             src={urlForImage(image).url()}
@@ -25,7 +25,7 @@ export const Procedure = ({ service }) => {
             width={300}
             height={300}
           />
-          <p className=" left-1/2 top-[413px] translate-x-[-50%] absolute z-20 text-right text-stone-900 text-2xl font-bold font-['Montserrat'] uppercase">
+          <p className=" left-1/2 top-[413px] translate-x-[-50%] absolute z-20 text-right text-primary text-2xl font-bold font-sans uppercase">
             {title}
           </p>
         </div>
@@ -78,7 +78,9 @@ export const Procedure = ({ service }) => {
               <DollarIcon width={24} height={24} />
               <p className="text-2xl font-medium">
                 {procedureCard.map(item => item.price)}
-                <span className="font-normal">{price} грн</span>
+                <span className="font-normal">
+                  {price} {procedureCard.map(item => item.currency)}
+                </span>
               </p>
             </div>
           </div>
