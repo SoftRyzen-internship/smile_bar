@@ -3,35 +3,30 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-// import { TabItem } from '../TabItem/TabItem';
-// import { Tab } from '../Tab';
-import { TabItem } from '../TabItem/TabItemNEW';
+import { TabItem } from '../TabItem';
+import { Tab } from '@headlessui/react';
 
-export const TabList = ({ data, isBenefit = false, className }) => {
-  const [open, setOpen] = useState(null);
+export const TabList = ({ data, isBenefit = false, className, height }) => {
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const toggle = index => {
-    if (open === index) {
-      return setOpen(null);
-    }
-    setOpen(index);
-  };
   return (
-    <ul
-      className={`${
-        isBenefit ? 'max-w-[708px]' : 'max-w-[892px]'
-      } ${className}`}
-    >
-      {data.map((data, index) => (
-        <TabItem
-          key={index}
-          open={index === open}
-          isBenefit={isBenefit}
-          data={data}
-          toggle={() => toggle(index)}
-        />
-      ))}
-    </ul>
+    <Tab.Group manual selectedIndex={selectedIndex} onChange={setSelectedIndex}>
+      <Tab.List
+        as="ul"
+        className={`${
+          isBenefit ? 'max-w-[708px]' : 'max-w-[892px]'
+        } ${className}`}
+      >
+        {data.map((data, index) => (
+          <TabItem
+            key={index}
+            isBenefit={isBenefit}
+            data={data}
+            height={height}
+          />
+        ))}
+      </Tab.List>
+    </Tab.Group>
   );
 };
 
@@ -46,4 +41,3 @@ TabItem.propTypes = {
   }).isRequired,
   className: PropTypes.node,
 };
-

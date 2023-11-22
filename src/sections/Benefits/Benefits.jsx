@@ -11,7 +11,7 @@ export const Benefits = () => {
         <div className="mt-[140px] notXl:hidden">
           <Image src="/smile.svg" width={452} height={311} alt="Smile Bar" />
         </div>
-        <TabList data={benefits} isBenefit />
+        <TabList data={benefits} isBenefit height="max-h-[96px]" />
       </div>
     </Section>
   );
