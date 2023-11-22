@@ -1,0 +1,36 @@
+{
+  "title": "Звʼяжіться з нами",
+  "contactsBlock": [
+    { "id": 1, "title": "Телефон", "type": "phone" },
+    { "id": 2, "title": "Адреса", "type": "location" },
+    { "id": 3, "title": "Соціальна мережа", "type": "social" }
+  ],
+  "callbackForm": {
+    "name": {
+      "labelText": "Ім'я*",
+      "placeholderText": "Іван Іванов",
+      "errorMessages": {
+        "required": "Обов'язкове поле",
+        "minLength": "Мінімум одна буква",
+        "maxLength": "Максимум 70 символів",
+        "pattern": "Невірне ім'я"
+      }
+    },
+    "phone": {
+      "labelText": "Телефон*",
+      "placeholderText": "+38 050 123 45 67",
+      "errorMessages": {
+        "required": "Обов'язкове поле",
+        "minLength": "Мінімум 11 цифр"
+      }
+    },
+    "message": {
+      "labelText": "Повідомлення",
+      "placeholderText": "Ваше повідомлення...",
+      "errorMessages": {
+        "maxLength": "Максимум 500 символів"
+      }
+    },
+    "buttonSubmit": { "labelText": "Відправити" }
+  }
+}

@@ -3,20 +3,22 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { sendTelegramMessage } from '@/utils';
-
 import { Input } from '../Input';
 import { InputMessage } from '../InputMessage';
 import { Button } from '../Button';
+import { sendTelegramMessage } from '@/utils';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import messages from '@/data/telegram.json';
-import data from '@/data/callbackForm.json';
-import { loadGetInitialProps } from 'next/dist/shared/lib/utils';
+import sectionData from '@/data/contactSection.json';
+
+const { title, contactsBlock } = sectionData;
 
 const LOCAL_STORAGE_KEY = 'callback';
 
-const { name, phone, message, buttonSubmit } = data;
+const {
+  callbackForm: { name, phone, message, buttonSubmit },
+} = sectionData;
 
 export const CallbackForm = ({ className }) => {
   const [isPending, setIsPending] = useState(false);
@@ -53,7 +55,7 @@ export const CallbackForm = ({ className }) => {
         },
         error: {
           render({ data }) {
-            return `${messages.queryRejected}: ${data.message}`;
+            return messages.queryRejected;
           },
         },
       });
@@ -110,11 +112,6 @@ export const CallbackForm = ({ className }) => {
           {buttonSubmit.labelText}
         </Button>
       </form>
-      <ToastContainer
-        theme="colored"
-        pauseOnFocusLoss={false}
-        pauseOnHover={false}
-      />
     </>
   );
 };

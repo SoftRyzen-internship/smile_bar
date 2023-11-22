@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export const Section = ({ id = '', title, children, className = '', classToTitle}) => {
   return (
     <section id={id} className={`py-[18px] md:py-6 xl:py-10 ${className}`}>
-      <div className="container">
+      <div className={`container relative ${id}`}>
         <Title className={classToTitle}>{title}</Title>
         {children}
       </div>
