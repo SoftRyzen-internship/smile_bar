@@ -6,10 +6,10 @@
 body {
   background-color: var(--primaryBg);
   overflow-y: overlay;
-  overflow-x: hidden;
 }
 
-@import './background.css';
+/* @import './background.css'; */
+@import './bg.css';
 /* Slider */
 @import '../components/Slider/Slider.module.css';
 
