@@ -43,4 +43,15 @@
   .slick-slider {
     padding: 24px 0;
   }
+
+  .slick-slider.centralMode {
+    padding: 24px 24px;
+  }
+
+  .slick-arrow.slick-next {
+    right: 0;
+  }
+  .slick-arrow.slick-prev {
+    left: 0;
+  }
 }

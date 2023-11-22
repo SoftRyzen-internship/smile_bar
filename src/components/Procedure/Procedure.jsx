@@ -21,7 +21,7 @@ export const Procedure = ({ service }) => {
           <Image
             className="object-cover rounded-3xl w-full h-full"
             src={urlForImage(image).url()}
-            alt="fyu"
+            alt={image.caption || 'Процедура відбілювання'}
             width={300}
             height={300}
           />
