@@ -88,14 +88,17 @@ hover:bg-blockHover ${style.item}
                 }
               })}
             {link && (
-              <a
-                href={link}
-                className="underline"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-              >
-                {link}
-              </a>
+              <>
+                <span>{link.text}</span>
+                <a
+                  href={link.src}
+                  className="underline"
+                  target="_blank"
+                  rel="nofollow noopener noreferrer"
+                >
+                  {link.link}
+                </a>
+              </>
             )}
           </div>
         </div>

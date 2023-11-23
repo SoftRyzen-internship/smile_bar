@@ -188,7 +188,7 @@ This is example of API for component `Title` and `Paragraph`
 |             |             | - title (string, required),              |
 |             |             | - description (string, required),        |
 |             |             | - addition (array),                      |
-|             |             | - link (string)                          |
+|             |             | - link (object)                          |
 | `isBenefit` | `false`     | `true` - for section "Benefits",         |
 |             |             | `false` - for section "Question-Answers" |
 | `children`  | `undefined` | add additional css class you'd need      |
