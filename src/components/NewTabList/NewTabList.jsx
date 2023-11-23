@@ -4,11 +4,14 @@ import style from './NewTab.module.css';
 import QuestionIcon from '/public/question.svg';
 import { useRef, useState } from 'react';
 import bgl from '@/../public/bgl.svg';
-const NewTabItem = ({ id, title, description, addition }) => {
+
+const NewTabItem = ({ id, title, description, addition, link }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [waitClick, setWaitClick] = useState();
   const ref = useRef(null);
   const refDescription = useRef(null);
+
+  const textLines = description.split('\n');
 
   const handleFocus = () => {
     setIsOpen(true);
@@ -55,12 +58,45 @@ const NewTabItem = ({ id, title, description, addition }) => {
         </p>
       </div>
       <div className="overflow-hidden h-auto">
-        <p
+        <div
           ref={refDescription}
           className="mt-[-100vh] pl-[40px]  text-[16px] leading-[1.2] text-justify  transition-[margin] duration-1000 group-focus:mt-[16px] "
         >
-          {description}
-        </p>
+          {textLines.map((item, idx) => (
+            <p key={idx}>{item}</p>
+          ))}
+          {addition &&
+            addition.map((item, index) => {
+              if (typeof item === 'string') {
+                return <p key={index}>{item}</p>;
+              }
+              if (typeof item === 'object') {
+                return (
+                  <ul className="list-disc pl-4 my-2" key={index}>
+                    {item.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                );
+              }
+            })}
+          {link && (
+            <a
+              href={link}
+              className="underline"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+            >
+              {link}
+            </a>
+          )}
+        </div>
+        {/* <p
+            ref={refDescription}
+            className="mt-[-100vh] pl-[40px]  text-[16px] leading-[1.2] text-justify  transition-[margin] duration-1000 group-focus:mt-[16px] "
+          >
+            {description}
+          </p> */}
       </div>
     </li>
   );
