@@ -33,14 +33,43 @@
 
 @media screen and (min-width: 1280px) {
   .centralMode .slick-slide.slick-center {
-    transform: scale(1);
+    animation: changeScaleBig 0.5s forwards;
   }
 
   .centralMode .slick-slide {
-    transform: scale(0.7);
+    animation: changeScaleSmall 0.5s forwards;
   }
 
   .slick-slider {
     padding: 24px 0;
+  }
+
+  .slick-slider.centralMode {
+    padding: 24px 24px;
+  }
+
+  .slick-arrow.slick-next {
+    right: 0;
+  }
+  .slick-arrow.slick-prev {
+    left: 0;
+  }
+}
+
+@keyframes changeScaleBig {
+  0% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes changeScaleSmall {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.7);
   }
 }
