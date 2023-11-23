@@ -11,7 +11,6 @@ export const TabItem = ({ data, isBenefit = false }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [waitClick, setWaitClick] = useState();
   const ref = useRef(null);
-  const refDescription = useRef(null);
 
   const textLines = description.split('\n');
 
@@ -21,8 +20,8 @@ export const TabItem = ({ data, isBenefit = false }) => {
   };
 
   const handleBlur = () => {
-    setIsOpen(true);
-    setWaitClick(true);
+    setIsOpen(false);
+    setWaitClick(false);
   };
 
   const handleClick = () => {
@@ -65,10 +64,7 @@ hover:bg-blockHover ${style.item}
           </p>
         </div>
         <div className="overflow-hidden h-auto">
-          <div
-            ref={refDescription}
-            className="mt-[-200vh] pl-[40px]  text-[16px] leading-[1.2] text-justify  transition-[margin] duration-1000 group-focus:mt-[16px] "
-          >
+          <div className="mt-[-200vh] pl-[40px]  text-[16px] leading-[1.2] text-justify  transition-[margin] duration-1000 group-focus:mt-[16px] ">
             {textLines.map((item, idx) => (
               <p key={idx}>{item}</p>
             ))}
