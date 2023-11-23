@@ -5,7 +5,6 @@
 /* Add global style for multiple component */
 body {
   background-color: var(--primaryBg);
-  overflow-y: overlay;
 }
 
 /* @import './background.css'; */
@@ -19,7 +18,7 @@ body {
 }
 
 html{
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
 }
 
 .isMenuShow {

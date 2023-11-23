@@ -73,3 +73,6 @@
     transform: scale(0.7);
   }
 }
+.slick-list.dragging {
+  cursor: pointer;
+}
