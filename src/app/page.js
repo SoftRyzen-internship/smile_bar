@@ -6,6 +6,7 @@ import { TeethPhoto } from '@/sections/TeethPhoto';
 import { Questions } from '@/sections/Questions';
 import { ProcedureSection } from '@/sections/ProcedureSection';
 import { ContactsSection } from '@/sections/ContactsSection';
+import { NewTabListSection } from '@/sections/NewTabListSection';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Questions />
       <TeethPhoto />
       <ContactsSection />
+      <NewTabListSection />
     </>
   );
 }

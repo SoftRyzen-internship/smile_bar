@@ -1,0 +1,10 @@
+.item:focus {
+  background-image: url('/bgl.svg'), url('/bgr.svg');
+  background-size:
+    100% auto,
+    auto;
+  background-repeat: no-repeat, no-repeat;
+  background-position:
+    top left,
+    bottom right;
+}
