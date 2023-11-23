@@ -1,10 +1,10 @@
-import CallIcon from '/public/call.svg';
+import { Icon } from '../Icon';
 import call from '@/data/call.json';
 
 export const Call = () => {
   return (
     <div className="flex gap-2 items-center justify-center">
-      <CallIcon className="w-6 h-6 stroke-primary" />
+      <Icon name="Call" className="stroke-primary" />
       {call.map(({ link, phone, key }) => (
         <a
           key={key}
