@@ -70,7 +70,6 @@ export const Input = ({
             : { ...nameRegisterValidation },
         )}
         {...onChangeProps}
-        noValidate
         autoComplete="off"
       />
       <span className="text-[12px] font-[500] text-error leading-[1.2] h-[15px] self-end">
