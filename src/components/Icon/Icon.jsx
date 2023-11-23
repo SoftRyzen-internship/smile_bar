@@ -4,16 +4,16 @@ import Instagram from '/public/instagram.svg';
 import Facebook from '/public/facebook.svg';
 import PropTypes from 'prop-types';
 
-export const Icon = ({ name, className }) => {
+export const Icon = ({ name, className, width = 24, height = 24 }) => {
   switch (name) {
     case 'Call':
-      return <Call className={className} />;
+      return <Call className={className} width={width} height={height} />;
     case 'Location':
-      return <Location className={className} />;
+      return <Location className={className} width={width} height={height} />;
     case 'Instagram':
-      return <Instagram className={className} />;
+      return <Instagram className={className} width={width} height={height} />;
     case 'Facebook':
-      return <Facebook className={className} />;
+      return <Facebook className={className} width={width} height={height} />;
   }
 };
 

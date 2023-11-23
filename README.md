@@ -215,6 +215,8 @@ from the React-hook-form library### InputMessage
 | ----------- | ----------- | --------------------------------------------------------- |
 | `name`      | `undefined` | required, icon name\*                                     |
 | `className` | `*`         | add custom or additional css class for wrapper you'd need |
+| `width`     | `24`        | icon width                                                |
+| `height`    | `24`        | icon height                                               |
 
 \* - now one of: Call, Location, Instagram, Facebook
 
