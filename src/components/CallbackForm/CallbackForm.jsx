@@ -70,6 +70,7 @@ export const CallbackForm = ({ className }) => {
       <form
         className={`flex flex-col max-w-[424px] p-[16px] md:px-[64px] md:py-[36px] rounded-[24px] bg-block ${className}`}
         onSubmit={handleSubmit(onSubmit)}
+        noValidate
       >
         <Input
           className="mb-[-3px]"
