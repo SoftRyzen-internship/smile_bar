@@ -49,7 +49,7 @@ export const CallbackForm = ({ className }) => {
         },
         success: {
           render() {
-            reset();
+            reset({ name: '', phone: '', message: '' });
             return messages.queryResolved;
           },
         },
