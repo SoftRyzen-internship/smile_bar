@@ -11,7 +11,7 @@ export const ContactItem = ({ link, icon, text, type, className }) => {
         target: '_blank',
       })}
     >
-      <Icon name={icon} className="h-6 w-6" />
+      <Icon name={icon} />
       <p className="flex flex-wrap">
         {text.split('|').map((elem, index) => (
           <span className="whitespace-pre" key={index}>
