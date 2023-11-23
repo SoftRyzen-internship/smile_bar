@@ -1,21 +1,51 @@
-import { Collapse } from 'react-collapse';
+'use client';
+
 import PropTypes from 'prop-types';
+import { useRef, useState } from 'react';
 
-import QuestionIcon from '/public/question.svg';
 import style from './TabItem.module.css';
+import QuestionIcon from '/public/question.svg';
 
-export const TabItem = ({ open, data, isBenefit = false, toggle }) => {
+export const TabItem = ({ data, isBenefit = false }) => {
   const { id, title, description, addition, link } = data;
+  const [isOpen, setIsOpen] = useState(false);
+  const [waitClick, setWaitClick] = useState();
+  const ref = useRef(null);
+  const refDescription = useRef(null);
+
   const textLines = description.split('\n');
+
+  const handleFocus = () => {
+    setIsOpen(true);
+    setWaitClick(true);
+  };
+
+  const handleBlur = () => {
+    setIsOpen(true);
+    setWaitClick(true);
+  };
+
+  const handleClick = () => {
+    if (isOpen) {
+      if (waitClick) {
+        setWaitClick(false);
+      } else {
+        ref.current.blur();
+      }
+    }
+  };
 
   return (
     <li
-      className={`cursor-pointer bg-block px-9 py-6 rounded-3xl mb-2 
-      ${open && isBenefit && style.bg_ellipse}
-      ${open && !isBenefit && style.bg_ellipse_ques}
-      ${!open && 'hover:bg-blockHover'}
+      ref={ref}
+      className={`group h-full cursor-pointer bg-block p-4 md:p-6 xl:px-9 rounded-2xl md:rounded-3xl mb-2 
+hover:bg-blockHover ${style.item} 
       }`}
-      onClick={toggle}
+      key={id}
+      tabIndex={id}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
+      onClick={handleClick}
     >
       <div className="relative z-[10]">
         <div className={`flex gap-4 items-center`}>
@@ -34,11 +64,10 @@ export const TabItem = ({ open, data, isBenefit = false, toggle }) => {
             {title}
           </p>
         </div>
-        <Collapse isOpened={open}>
+        <div className="overflow-hidden h-auto">
           <div
-            className={`text-base text-justify pt-4 
-            ${isBenefit ? 'pl-[45px]' : 'pl-10'}
-            `}
+            ref={refDescription}
+            className="mt-[-200vh] pl-[40px]  text-[16px] leading-[1.2] text-justify  transition-[margin] duration-1000 group-focus:mt-[16px] "
           >
             {textLines.map((item, idx) => (
               <p key={idx}>{item}</p>
@@ -69,7 +98,7 @@ export const TabItem = ({ open, data, isBenefit = false, toggle }) => {
               </a>
             )}
           </div>
-        </Collapse>
+        </div>
       </div>
     </li>
   );
