@@ -1,3 +1,3 @@
 export const nameNormalize = value => {
-  return value.replaceAll('`', "'");
+  return value.replace(/[`’‘]/gm, "'");
 };
