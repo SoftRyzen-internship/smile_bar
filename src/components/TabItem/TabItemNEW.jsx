@@ -35,7 +35,11 @@ export const TabItem = ({ open, data, isBenefit = false, toggle }) => {
             {title}
           </p>
         </div>
-        <div className={`overflow-hidden ${open ? 'h-auto' : 'h-0'} `}>
+        <div
+          className={`overflow-hidden  ${style.hidden_block} ${
+            open ? 'h-full' : 'h-0'
+          } `}
+        >
           <div
             className={`text-base text-justify transition-[margin] duration-1000 ${
               !open

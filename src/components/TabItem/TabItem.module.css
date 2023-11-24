@@ -95,6 +95,7 @@
         height: 867.353px;
     }
 }
+
 .item:focus {
     background-image: url('/bgl.svg'), url('/bgr.svg');
     background-size:
@@ -106,4 +107,17 @@
     background-position:
         top left,
         bottom right;
+}
+.hidden_block {
+    animation: changeHeight 1s forwards;
+}
+
+@keyframes changeHeight {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 100%;
+    }
 }
