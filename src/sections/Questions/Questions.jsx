@@ -1,5 +1,6 @@
 import { Section } from '@/components/Section';
-import { TabList } from '@/components/TabList';
+import { TabList } from '@/components/TabList/TabListNEW';
+// import { TabList } from '@/components/TabList';
 import questions from '@/data/questions';
 
 export const Questions = () => {
