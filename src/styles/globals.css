@@ -9,6 +9,7 @@ body {
 
 /* @import './background.css'; */
 @import './bg.css';
+@import './burgerBg.css';
 /* Slider */
 @import '../components/Slider/Slider.module.css';
 

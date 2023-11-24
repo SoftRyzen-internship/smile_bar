@@ -1,0 +1,22 @@
+header .gradient{
+    background-image:
+            radial-gradient(circle 749px, rgba(214, 200, 255, 1) 0%, rgba(214, 200, 255, 0.9) 100%),
+            radial-gradient(circle 603px, rgba(237, 198, 255, 1) 0%, rgba(237, 198, 255, 0.9) 100%);
+    background-position:
+            top 214px right 58px,
+            top 37px left 180px;
+    background-repeat: 
+            no-repeat,
+            no-repeat;
+    background-size: 749px 749px,
+                    603px 603px;
+    filter: blur(200px);
+    z-index: -1;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    header .gradient {
+    background-position: top 224px right 406px,
+    top 47px left 435px;
+    }
+}
