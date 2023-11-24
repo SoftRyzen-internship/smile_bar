@@ -25,7 +25,7 @@ export const Slider = ({
           height: '24px',
           top: '100%',
           right: '50%',
-          transform: 'translate(32px, -20px)',
+          transform: 'translate(32px, -24px)',
         }}
         onClick={onClick}
       />
@@ -45,7 +45,7 @@ export const Slider = ({
           height: '24px',
           top: '100%',
           left: '50%',
-          transform: 'translate(-32px, -20px)',
+          transform: 'translate(-32px, -24px)',
         }}
         onClick={onClick}
       />
@@ -59,7 +59,7 @@ export const Slider = ({
     centerPadding: '0px',
     slidesToShow: 3,
     slidesToScroll: 1,
-    initialSlide: 1,
+    initialSlide: 0,
     responsive: [
       {
         breakpoint: 1279,

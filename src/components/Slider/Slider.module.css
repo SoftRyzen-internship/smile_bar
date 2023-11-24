@@ -22,12 +22,12 @@
 }
 
 .slick-slider {
-  padding: 40px 0;
+  padding: 20px 0 44px 0;
 }
 
 @media screen and (min-width: 768px) {
   .slick-slider {
-    padding: 48px 0;
+    padding: 24px 0 48px 0;
   }
 }
 
