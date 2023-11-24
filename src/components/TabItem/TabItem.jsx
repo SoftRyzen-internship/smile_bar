@@ -38,7 +38,7 @@ export const TabItem = ({ open, data, isBenefit = false, toggle }) => {
           } `}
         >
           <div
-            className={`text-base text-justify transition-[margin] duration-1000 ${
+            className={`text-base text-justify transition-[margin] duration-700 ${
               !open
                 ? 'mt-[-200vh] invisible opacity-0 pointer-events-none'
                 : 'mt-4 visible opacity-100  pointer-events-auto'
