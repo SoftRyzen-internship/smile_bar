@@ -15,7 +15,7 @@ export const Procedure = ({ service }) => {
 
   return (
     <div className=" group bg-transparent cursor-pointer [perspective:1000px]">
-      <div className="relative mx-auto w-auto h-[502px] md:w-[342px] xl:w-[390px] xl:h-[482px] z-auto [transform-style:preserve-3d] xl:group-hover:[transform:rotateY(180deg)] duration-1000  ">
+      <div className="relative mx-auto w-[97%] h-[502px] md:w-[342px] xl:w-[390px] xl:h-[482px] z-auto [transform-style:preserve-3d] xl:group-hover:[transform:rotateY(180deg)] duration-1000  ">
         <div className="absolute [backface-visibility:hidden] [transform:rotateY(180deg)] xl:[transform:rotateY(0deg)] w-full h-full inset-0">
           <div className="w-full h-full absolute rounded-3xl z-10 bg-gradient-to-b from-white/0 from-50% to-white/75"></div>
           <Image
