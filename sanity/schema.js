@@ -118,9 +118,9 @@ export const schema = {
         },
         {
           name: 'image',
-          title: 'Зоображення',
+          title: 'Зображення',
           type: 'image',
-          validation: Rule => Rule.required().error('Додайте зоображення'),
+          validation: Rule => Rule.required().error('Додайте зображення'),
           options: {
             hotspot: true,
             readOnly: false,

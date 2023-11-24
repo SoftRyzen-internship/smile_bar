@@ -40,9 +40,9 @@ export const InputMessage = ({
         onChange={handleChange}
       ></textarea>
 
-      <p className="text-[12px] font-[500] text-error leading-[1.2] h-[15px] self-end">
+      <span className="text-[12px] font-[500] text-error leading-[1.2] h-[15px] self-end">
         {errors[name]?.message}
-      </p>
+      </span>
     </label>
   );
 };

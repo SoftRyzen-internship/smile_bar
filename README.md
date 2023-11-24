@@ -188,7 +188,7 @@ This is example of API for component `Title` and `Paragraph`
 |             |             | - title (string, required),              |
 |             |             | - description (string, required),        |
 |             |             | - addition (array),                      |
-|             |             | - link (string)                          |
+|             |             | - link (object)                          |
 | `isBenefit` | `false`     | `true` - for section "Benefits",         |
 |             |             | `false` - for section "Question-Answers" |
 | `children`  | `undefined` | add additional css class you'd need      |
@@ -215,6 +215,8 @@ from the React-hook-form library### InputMessage
 | ----------- | ----------- | --------------------------------------------------------- |
 | `name`      | `undefined` | required, icon name\*                                     |
 | `className` | `*`         | add custom or additional css class for wrapper you'd need |
+| `width`     | `24`        | icon width                                                |
+| `height`    | `24`        | icon height                                               |
 
 \* - now one of: Call, Location, Instagram, Facebook
 

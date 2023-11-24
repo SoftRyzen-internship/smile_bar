@@ -17,11 +17,11 @@ export const Procedure = ({ service }) => {
     <div className=" group bg-transparent cursor-pointer [perspective:1000px]">
       <div className="relative mx-auto w-auto h-[502px] md:w-[342px] xl:w-[390px] xl:h-[482px] z-auto [transform-style:preserve-3d] xl:group-hover:[transform:rotateY(180deg)] duration-1000  ">
         <div className="absolute [backface-visibility:hidden] [transform:rotateY(180deg)] xl:[transform:rotateY(0deg)] w-full h-full inset-0">
-          <div className="w-full h-full absolute z-10 bg-gradient-to-b from-white/0 from-50% to-white/75"></div>
+          <div className="w-full h-full absolute rounded-3xl z-10 bg-gradient-to-b from-white/0 from-50% to-white/75"></div>
           <Image
             className="object-cover rounded-3xl w-full h-full"
             src={urlForImage(image).url()}
-            alt="fyu"
+            alt={image.caption || 'Зображення процедури відбілювання'}
             width={300}
             height={300}
           />

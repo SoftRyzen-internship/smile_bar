@@ -5,25 +5,10 @@
 /* Add global style for multiple component */
 body {
   background-color: var(--primaryBg);
-  overflow-y: overlay;
-    overflow-x: hidden;
 }
 
-body::-webkit-scrollbar {
-  width: 10px;
-}
-
-body::-webkit-scrollbar-track {
-  background: #D3D3D340;
-  border-radius: 12px;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: #D3D3D380;
-  border-radius: 12px;
-}
-
-@import './background.css';
+/* @import './background.css'; */
+@import './bg.css';
 /* Slider */
 @import '../components/Slider/Slider.module.css';
 
@@ -33,7 +18,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 html{
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
 }
 
 .isMenuShow {

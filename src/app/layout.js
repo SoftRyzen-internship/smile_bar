@@ -19,11 +19,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${montserrat.className} flex flex-col h-full min-h-screen`}
       >
-        <div className="overflow-x-hidden w-screen">
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </div>
+        <Header />
+        <main className="flex-grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );

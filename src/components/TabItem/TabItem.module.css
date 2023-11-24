@@ -95,3 +95,15 @@
         height: 867.353px;
     }
 }
+.item:focus {
+    background-image: url('/bgl.svg'), url('/bgr.svg');
+    background-size:
+        100% auto,
+        auto;
+    /* 100% 108px,
+    368px 197px; */
+    background-repeat: no-repeat, no-repeat;
+    background-position:
+        top left,
+        bottom right;
+}

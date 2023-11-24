@@ -1,19 +1,10 @@
 'use client';
 
-import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { TabItem } from '../TabItem/TabItem';
+import { TabItem } from '../TabItem';
 
 export const TabList = ({ data, isBenefit = false, className }) => {
-  const [open, setOpen] = useState(false);
-
-  const toggle = index => {
-    if (open === index) {
-      return setOpen(null);
-    }
-    setOpen(index);
-  };
   return (
     <ul
       className={`${
@@ -21,13 +12,7 @@ export const TabList = ({ data, isBenefit = false, className }) => {
       } ${className}`}
     >
       {data.map((data, index) => (
-        <TabItem
-          key={index}
-          open={index === open}
-          isBenefit={isBenefit}
-          data={data}
-          toggle={() => toggle(index)}
-        />
+        <TabItem key={index} isBenefit={isBenefit} data={data} />
       ))}
     </ul>
   );
@@ -40,8 +25,7 @@ TabItem.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     addition: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-    link: PropTypes.string,
+    link: PropTypes.object,
   }).isRequired,
   className: PropTypes.node,
 };
-

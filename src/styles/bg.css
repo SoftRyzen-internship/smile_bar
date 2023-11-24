@@ -1,0 +1,51 @@
+body {
+    background-image:
+        radial-gradient(circle 749px, rgba(214, 200, 255, 1) 0%, rgba(214, 200, 255, 0.9) 100%),
+        radial-gradient(circle 603px, rgba(237, 198, 255, 1) 0%, rgba(237, 198, 255, 0.9) 100%),
+        radial-gradient(circle 749px, rgba(214, 200, 255, 1) 0%, rgba(214, 200, 255, 0.9) 100%),
+        radial-gradient(circle 603px, rgba(237, 198, 255, 1) 0%, rgba(237, 198, 255, 0.9) 100%),
+        radial-gradient(circle 603px, rgba(237, 198, 255, 1) 0%, rgba(237, 198, 255, 0.9) 100%),
+        radial-gradient(circle 749px, rgba(214, 200, 255, 1) 0%, rgba(214, 200, 255, 0.9) 100%);
+    background-position:
+        top 214px right 58px,
+        top 37px left 180px,
+        top 2190px right 58px,
+        top 2013px left 180px,
+        top 4531px left 180px,
+        top 4708px right 58px;
+
+    background-repeat: no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat;
+    background-size: 749px 749px,
+        603px 603px,
+        749px 749px,
+        603px 603px,
+        603px 603px,
+        749px 749px;
+
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+        background-position:
+            top 224px right 406px,
+            top 47px left 435px,
+            top 2130px right 406px,
+            top 1953px left 435px,
+            top 3624px left 435px,
+            top 3801px right 406px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        background-position:
+            top 263px left -291px,
+            top 64px right -130px,
+            top 2506px left -557px,
+            top 2251px right -491px,
+            top 4146px left -446px,
+            top 3865px right -603px;
+    }
+
+    backdrop-filter: blur(200px);
+}
