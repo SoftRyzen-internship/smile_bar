@@ -1,50 +1,19 @@
-'use client';
-
 import PropTypes from 'prop-types';
-import { useRef, useState } from 'react';
 
-import style from './TabItem.module.css';
 import QuestionIcon from '/public/question.svg';
+import style from './TabItem.module.css';
 
-export const TabItem = ({ data, isBenefit = false }) => {
+export const TabItem = ({ open, data, isBenefit = false, toggle }) => {
   const { id, title, description, addition, link } = data;
-  const [isOpen, setIsOpen] = useState(false);
-  const [waitClick, setWaitClick] = useState();
-  const ref = useRef(null);
-
   const textLines = description.split('\n');
-
-  const handleFocus = () => {
-    setIsOpen(true);
-    setWaitClick(true);
-  };
-
-  const handleBlur = () => {
-    setIsOpen(false);
-    setWaitClick(false);
-  };
-
-  const handleClick = () => {
-    if (isOpen) {
-      if (waitClick) {
-        setWaitClick(false);
-      } else {
-        ref.current.blur();
-      }
-    }
-  };
 
   return (
     <li
-      ref={ref}
-      className={`group h-full cursor-pointer bg-block p-4 md:p-6 xl:px-9 rounded-2xl md:rounded-3xl mb-2 
-hover:bg-blockHover ${style.item} 
+      className={`h-full cursor-pointer bg-block p-4 md:p-6 xl:px-9 rounded-2xl md:rounded-3xl mb-2 overlay-hidden transition duration-300 easy-out
+      ${!open ? 'hover:bg-blockHover' : `${style.item_focus}`}
+      
       }`}
-      key={id}
-      tabIndex={id}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
-      onClick={handleClick}
+      onClick={toggle}
     >
       <div className="relative z-[10]">
         <div className={`flex gap-4 items-center`}>
@@ -63,8 +32,20 @@ hover:bg-blockHover ${style.item}
             {title}
           </p>
         </div>
-        <div className="overflow-hidden h-auto">
-          <div className="mt-[-200vh] pl-[40px]  text-[16px] leading-[1.2] text-justify  transition-[margin] duration-1000 group-focus:mt-[16px] ">
+        <div
+          className={`overflow-hidden  ${style.hidden_block} ${
+            open ? 'h-full' : 'h-0'
+          } `}
+        >
+          <div
+            className={`text-base text-justify transition-[margin] duration-1000 ${
+              !open
+                ? 'mt-[-200vh] invisible opacity-0 pointer-events-none'
+                : 'mt-4 visible opacity-100  pointer-events-auto'
+            }
+            ${isBenefit ? 'pl-[45px]' : 'pl-10'}
+            `}
+          >
             {textLines.map((item, idx) => (
               <p key={idx}>{item}</p>
             ))}
