@@ -42,7 +42,7 @@ TabItem.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     addition: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-    link: PropTypes.string,
+    link: PropTypes.object,
   }).isRequired,
   className: PropTypes.node,
 };
