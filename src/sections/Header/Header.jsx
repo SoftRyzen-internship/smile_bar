@@ -20,7 +20,7 @@ export const Header = () => {
   return (
     <header
       className={` relative w-full pt-9 xl:pb-6  ${
-        menuShow && 'bg-white gradient h-screen z-[30]'
+        menuShow && ' gradient h-screen z-[30]'
       }`}
     >
       <div className="container mx-auto flex items-center justify-between pb-9 xl:pb-0">
