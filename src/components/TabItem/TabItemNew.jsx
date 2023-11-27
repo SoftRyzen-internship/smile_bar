@@ -12,30 +12,29 @@ export const TabItemNew = ({ data, isBenefit = false }) => {
   const { id, title, description, addition, link } = data;
   const [isOpen, setIsOpen] = useState(false);
   const [waitClick, setWaitClick] = useState();
+  const [descriptionHeight, setDescriptionHeight] = useState(3000);
+  const windowWidth = useWindowWidth();
+
   const ref = useRef(null);
   const refDescription = useRef(null);
-  const windowWidth = useWindowWidth();
-  const [descriptionHeight, setDescriptionHeight] = useState(3000);
+
   const textLines = useMemo(() => description.split('\n'), [description]);
 
   useEffect(() => {
     if (windowWidth) {
       setDescriptionHeight(refDescription.current?.clientHeight);
-      console.log({ first: refDescription.current?.clientHeight });
     }
   }, [windowWidth]);
 
   const handleFocus = () => {
     setIsOpen(true);
     setWaitClick(true);
-    console.log('focus');
     setTimeout(() => scrollIfNeedForItem(ref.current, true), 500);
   };
 
   const handleBlur = () => {
     setIsOpen(false);
     setWaitClick(false);
-    console.log('blur');
   };
 
   const handleClick = () => {
@@ -43,7 +42,6 @@ export const TabItemNew = ({ data, isBenefit = false }) => {
       if (waitClick) {
         setWaitClick(false);
       } else {
-        console.log('click');
         scrollIfNeedForItem(ref.current);
         ref.current.blur();
       }
