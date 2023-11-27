@@ -1,19 +1,51 @@
+'use client';
+
 import PropTypes from 'prop-types';
 
 import QuestionIcon from '/public/question.svg';
 import style from './TabItem.module.css';
+import { useEffect, useRef, useState } from 'react';
 
 export const TabItem = ({ open, data, isBenefit = false, toggle }) => {
   const { id, title, description, addition, link } = data;
   const textLines = description.split('\n');
+  const tabRef = useRef(null);
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (window) {
+      const checkIsMobile = () => {
+        setIsMobile(window.matchMedia('(max-width: 768px)').matches);
+      };
+
+      checkIsMobile();
+
+      window.addEventListener('resize', checkIsMobile);
+
+      return () => {
+        window.removeEventListener('resize', checkIsMobile);
+      };
+    }
+  }, []);
+
+  const handleToggle = () => {
+    toggle();
+    if (tabRef.current && isMobile) {
+      setTimeout(() => {
+        tabRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 500);
+    }
+  };
 
   return (
     <li
+      ref={tabRef}
       className={`h-full cursor-pointer bg-block p-4 md:p-6 xl:px-9 rounded-2xl md:rounded-3xl mb-2 overlay-hidden transition duration-300 easy-out
       ${!open ? 'hover:bg-blockHover' : `${style.item_focus}`}
       
       }`}
-      onClick={toggle}
+      onClick={handleToggle}
     >
       <div className="relative z-[10]">
         <div className={`flex gap-4 items-center`}>
@@ -40,7 +72,7 @@ export const TabItem = ({ open, data, isBenefit = false, toggle }) => {
           <div
             className={`text-base text-justify transition-[margin] duration-700 ${
               !open
-                ? 'mt-[-200vh] invisible opacity-0 pointer-events-none'
+                ? 'mt-[-300vh] invisible opacity-0 pointer-events-none'
                 : 'mt-4 visible opacity-100  pointer-events-auto'
             }
             ${isBenefit ? 'pl-[45px]' : 'pl-10'}
