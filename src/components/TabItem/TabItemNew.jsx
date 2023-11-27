@@ -19,7 +19,10 @@ export const TabItemNew = ({ data, isBenefit = false }) => {
   const textLines = useMemo(() => description.split('\n'), [description]);
 
   useEffect(() => {
-    setDescriptionHeight(ref.current?.clientHeight);
+    if (windowWidth) {
+      setDescriptionHeight(refDescription.current?.clientHeight);
+      console.log({ first: refDescription.current?.clientHeight });
+    }
   }, [windowWidth]);
 
   const handleFocus = () => {
@@ -51,7 +54,7 @@ export const TabItemNew = ({ data, isBenefit = false }) => {
     <li
       ref={ref}
       className={`group h-full cursor-pointer bg-block p-4 md:p-6 xl:px-9 rounded-2xl md:rounded-3xl mb-2 
-hover:bg-blockHover ${style.item} 
+hover:bg-blockHover transition-colors duration-300 ${style.item} 
       }`}
       key={id}
       tabIndex={id}
@@ -80,13 +83,9 @@ hover:bg-blockHover ${style.item}
           <div
             className="mt-[-300vh] pl-[40px]  text-[16px] leading-[1.2] text-justify  transition-[margin] duration-500 group-focus:mt-[16px] "
             ref={refDescription}
-            style={
-              descriptionHeight
-                ? {}
-                : {
-                    marginTop: isOpen ? 16 : -descriptionHeight - 16,
-                  }
-            }
+            style={{
+              marginTop: isOpen ? 16 : -descriptionHeight - 16,
+            }}
           >
             {textLines.map((item, idx) => (
               <p key={idx}>{item}</p>
