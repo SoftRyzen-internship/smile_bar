@@ -1,109 +1,31 @@
-.bg_ellipse,
-.bg_ellipse_ques {
-    position: relative;
-    overflow: hidden;
-}
-
-.bg_ellipse::before,
-.bg_ellipse::after {
-    content: '';
-    position: absolute;
-    z-index: 1;
-    width: 241.333px;
-    height: 1741.235px;
-    flex-shrink: 0;
-    filter: blur(65px);
-    border-radius: 50%;
-}
-
-.bg_ellipse::before {
-    bottom: 30%;
-    right: 50%;
-    background: #a6d4ff;
-}
-
-.bg_ellipse::after {
-    top: 50%;
-    left: 45%;
-    background: #a6afff;
+.item_focus {
+  background-image: url('/bgl.svg'), url('/bgr.svg');
+  background-size:
+    200% auto,
+    auto;
+  background-repeat: no-repeat, no-repeat;
+  background-position:
+    top left,
+    bottom right;
 }
 
 @media screen and (min-width: 768px) {
-
-    .bg_ellipse::after,
-    .bg_ellipse::before {
-        width: 533.95px;
-        height: 833.412px;
+    .item_focus {
+        background-image: url('/bgtab.svg');
+        background-size: 100% 100%;
     }
 }
 
-.bg_ellipse_ques::before,
-.bg_ellipse_ques::after {
-    content: '';
-    position: absolute;
-    z-index: 1;
-    height: 1012.532px;
-    flex-shrink: 0;
-    filter: blur(65px);
-    border-radius: 50%;
+.hidden_block {
+    animation: changeHeight 1s forwards;
 }
 
-.bg_ellipse_ques::before {
-    width: 790.547px;
-    background: #a6d4ff;
-    bottom: 80%;
-    right: -50%;
-
-
-}
-
-@media screen and (min-width: 768px) {
-
-    .bg_ellipse_ques::before {
-        bottom: 60%;
-        right: 30%;
+@keyframes changeHeight {
+    0% {
+        height: 0;
     }
-}
 
-@media screen and (min-width: 1280px) {
-
-    .bg_ellipse_ques::before {
-        width: 996px;
-        height: 867.353px;
+    100% {
+        height: 100%;
     }
-}
-
-.bg_ellipse_ques::after {
-    width: 956.435px;
-    background: #a6afff;
-    top: 30%;
-    left: 40%;
-}
-
-@media screen and (min-width: 768px) {
-
-    .bg_ellipse_ques::after {
-        top: 60%;
-        left: 17%;
-    }
-}
-
-@media screen and (min-width: 1280px) {
-
-    .bg_ellipse_ques::after {
-        width: 1205px;
-        height: 867.353px;
-    }
-}
-.item:focus {
-    background-image: url('/bgl.svg'), url('/bgr.svg');
-    background-size:
-        100% auto,
-        auto;
-    /* 100% 108px,
-    368px 197px; */
-    background-repeat: no-repeat, no-repeat;
-    background-position:
-        top left,
-        bottom right;
 }
