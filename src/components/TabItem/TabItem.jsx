@@ -1,3 +1,5 @@
+'use client';
+
 import PropTypes from 'prop-types';
 
 import QuestionIcon from '/public/question.svg';
