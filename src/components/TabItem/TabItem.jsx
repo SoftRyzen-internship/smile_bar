@@ -4,22 +4,39 @@ import PropTypes from 'prop-types';
 
 import QuestionIcon from '/public/question.svg';
 import style from './TabItem.module.css';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export const TabItem = ({ open, data, isBenefit = false, toggle }) => {
   const { id, title, description, addition, link } = data;
   const textLines = description.split('\n');
   const tabRef = useRef(null);
 
-  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    if (open && tabRef.current && isMobile) {
+    if (window) {
+      const checkIsMobile = () => {
+        setIsMobile(window.matchMedia('(max-width: 768px)').matches);
+      };
+
+      checkIsMobile();
+
+      window.addEventListener('resize', checkIsMobile);
+
+      return () => {
+        window.removeEventListener('resize', checkIsMobile);
+      };
+    }
+  }, []);
+
+  const handleToggle = () => {
+    toggle();
+    if (tabRef.current && isMobile) {
       setTimeout(() => {
         tabRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 500);
     }
-  }, [open, isMobile]);
+  };
 
   return (
     <li
@@ -28,7 +45,7 @@ export const TabItem = ({ open, data, isBenefit = false, toggle }) => {
       ${!open ? 'hover:bg-blockHover' : `${style.item_focus}`}
       
       }`}
-      onClick={toggle}
+      onClick={handleToggle}
     >
       <div className="relative z-[10]">
         <div className={`flex gap-4 items-center`}>
