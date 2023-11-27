@@ -4,12 +4,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import labelLogo from '@/data/labelLogo.json';
 
-export const Logo = ({ className }) => {
+export const Logo = ({ className, isShowMenu = false, onCloseMenu = null }) => {
   return (
     <Link
       className={className}
       href="/"
       aria-label={labelLogo.map(item => item.aria_label)}
+      onClick={isShowMenu ? onCloseMenu : null}
     >
       <Image
         src="/logo.svg"
@@ -24,4 +25,6 @@ export const Logo = ({ className }) => {
 
 Logo.propTypes = {
   className: PropTypes.string,
+  isShowMenu: PropTypes.bool,
+  onCloseMenu: PropTypes.func,
 };

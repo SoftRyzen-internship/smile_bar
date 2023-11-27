@@ -24,7 +24,8 @@ export const Header = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between pb-9 xl:pb-0">
-        <Logo />
+        {/* <Logo /> */}
+        <Logo isShowMenu={menuShow} onCloseMenu={() => setMenuShow(false)} />
         {menuShow ? (
           <BurgerIconWrap
             open={menuShow}
