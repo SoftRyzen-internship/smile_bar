@@ -21,6 +21,13 @@
   transform: scale(1.2);
 }
 
+.slick-arrow.slick-next.slick-disabled:focus::before,
+.slick-arrow.slick-next.slick-disabled:hover::before,
+.slick-arrow.slick-prev.slick-disabled:focus::before,
+.slick-arrow.slick-prev.slick-disabled:hover::before {
+  transform: scale(1);
+}
+
 .slick-slider {
   padding: 20px 0 44px 0;
 }

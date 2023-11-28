@@ -131,9 +131,11 @@ This is example of API for component `Title` and `Paragraph`
 
 - ### Logo
 
-| Prop        | Default                                 | Description                     |
-| ----------- | --------------------------------------- | ------------------------------- |
-| `className` | `w-[68px] h-12 xl:w-[90px] xl:h-[62px]` | add custom css class you'd need |
+| Prop         | Default                                 | Description                                  |
+| ------------ | --------------------------------------- | -------------------------------------------- |
+| `className`  | `w-[68px] h-12 xl:w-[90px] xl:h-[62px]` | add custom css class you'd need              |
+| `isShowMenu` | `false`                                 | add if the logo should cover the mobile menu |
+| `onCloseMenu`| `null`                                  | add function to close the mobile menu        |
 
 - ### Button
 
