@@ -1,7 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import PropTypes, { string } from 'prop-types';
 import DollarIcon from '/public/dollar.svg';
 import ClockIcon from '/public/clock.svg';
 import SunIcon from '/public/sun.svg';
@@ -10,12 +11,21 @@ import FlashIcon from '/public/flash.svg';
 import { urlForImage } from '../../../sanity/lib/image';
 import procedureCard from '@/data/procedureCard.json';
 
-export const Procedure = ({ service }) => {
+export const Procedure = ({ service, over }) => {
   const { title, price, description, image, list } = service;
+  const [overClass, setOverClass] = useState('xl:w-[390px]');
+
+  useEffect(() => {
+    if (over) {
+      setOverClass('xl:w-[350px]');
+    }
+  }, [over]);
 
   return (
     <div className=" group bg-transparent cursor-pointer [perspective:1000px]">
-      <div className="relative mx-auto w-[97%] h-[502px] md:w-[342px] xl:w-[390px] xl:h-[482px] z-auto [transform-style:preserve-3d] xl:group-hover:[transform:rotateY(180deg)] duration-1000  ">
+      <div
+        className={`relative mx-auto w-[97%] h-[502px] md:w-[342px] ${overClass} xl:h-[482px] z-auto [transform-style:preserve-3d] xl:group-hover:[transform:rotateY(180deg)] duration-1000`}
+      >
         <div className="absolute [backface-visibility:hidden] [transform:rotateY(180deg)] xl:[transform:rotateY(0deg)] w-full h-full inset-0">
           <div className="w-full h-full absolute rounded-3xl z-10 bg-gradient-to-b from-white/0 from-50% to-white/75"></div>
           <Image
@@ -88,4 +98,20 @@ export const Procedure = ({ service }) => {
       </div>
     </div>
   );
+};
+
+Procedure.propTypes = {
+  service: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.object.isRequired,
+    list: PropTypes.shape({
+      result: PropTypes.string.isRequired,
+      time: PropTypes.string.isRequired,
+      lighting: PropTypes.string.isRequired,
+      gel: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+  over: PropTypes.bool,
 };

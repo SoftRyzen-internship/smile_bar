@@ -51,7 +51,8 @@
     padding: 24px 0;
   }
 
-  .slick-slider.centralMode {
+  .slick-slider.centralMode,
+  .slick-slider.over {
     padding: 24px 24px;
   }
 
