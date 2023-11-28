@@ -9,7 +9,6 @@ import QuestionIcon from '/public/question.svg';
 import { scrollIfNeedForItem } from '@/utils';
 import { useWindowWidth } from '@/hooks';
 
-
 export const TabItem = ({ data, isBenefit = false }) => {
   const { id, title, description, addition, link } = data;
 
@@ -48,23 +47,20 @@ export const TabItem = ({ data, isBenefit = false }) => {
         scrollIfNeedForItem(ref.current);
         ref.current.blur();
       }
-
     }
   };
 
   return (
     <li
-
       ref={ref}
       className={`group h-full cursor-pointer bg-block p-4 md:p-6 xl:px-9 rounded-2xl md:rounded-3xl mb-2 
 hover:bg-blockHover transition-colors duration-300 ${style.item} 
       }`}
       key={id}
-      tabIndex={id}
+      tabIndex={0}
       onFocus={handleFocus}
       onBlur={handleBlur}
       onClick={handleClick}
-
     >
       <div className="relative z-[10]">
         <div className={`flex gap-4 items-center`}>
@@ -90,7 +86,6 @@ hover:bg-blockHover transition-colors duration-300 ${style.item}
             style={{
               marginTop: isOpen ? 16 : -descriptionHeight - 16,
             }}
-
           >
             {textLines.map((item, idx) => (
               <p key={idx}>{item}</p>
@@ -119,6 +114,7 @@ hover:bg-blockHover transition-colors duration-300 ${style.item}
                   target="_blank"
                   rel="nofollow noopener noreferrer"
                   onFocus={e => ref.current.focus()}
+                  tabIndex={-1}
                 >
                   {link.link}
                 </a>
