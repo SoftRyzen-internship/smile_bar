@@ -1,19 +1,64 @@
+'use client';
+
 import PropTypes from 'prop-types';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
-import QuestionIcon from '/public/question.svg';
 import style from './TabItem.module.css';
+import QuestionIcon from '/public/question.svg';
+import { scrollIfNeedForItem } from '@/utils';
+import { useWindowWidth } from '@/hooks';
 
-export const TabItem = ({ open, data, isBenefit = false, toggle }) => {
+export const TabItem = ({ data, isBenefit = false }) => {
   const { id, title, description, addition, link } = data;
-  const textLines = description.split('\n');
+  const [isOpen, setIsOpen] = useState(false);
+  const [waitClick, setWaitClick] = useState();
+  const [descriptionHeight, setDescriptionHeight] = useState(3000);
+  const windowWidth = useWindowWidth();
+
+  const ref = useRef(null);
+  const refDescription = useRef(null);
+
+  const textLines = useMemo(() => description.split('\n'), [description]);
+
+  useEffect(() => {
+    if (windowWidth) {
+      setDescriptionHeight(refDescription.current?.clientHeight);
+    }
+  }, [windowWidth]);
+
+  const handleFocus = () => {
+    setIsOpen(true);
+    setWaitClick(true);
+    setTimeout(() => scrollIfNeedForItem(ref.current, true), 500);
+  };
+
+  const handleBlur = () => {
+    setIsOpen(false);
+    setWaitClick(false);
+  };
+
+  const handleClick = () => {
+    if (isOpen) {
+      if (waitClick) {
+        setWaitClick(false);
+      } else {
+        scrollIfNeedForItem(ref.current);
+        ref.current.blur();
+      }
+    }
+  };
 
   return (
     <li
-      className={`h-full cursor-pointer bg-block p-4 md:p-6 xl:px-9 rounded-2xl md:rounded-3xl mb-2 overlay-hidden transition duration-300 easy-out
-      ${!open ? 'hover:bg-blockHover' : `${style.item_focus}`}
-      
+      ref={ref}
+      className={`group h-full cursor-pointer bg-block p-4 md:p-6 xl:px-9 rounded-2xl md:rounded-3xl mb-2 
+hover:bg-blockHover transition-colors duration-300 ${style.item} 
       }`}
-      onClick={toggle}
+      key={id}
+      tabIndex={id}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
+      onClick={handleClick}
     >
       <div className="relative z-[10]">
         <div className={`flex gap-4 items-center`}>
@@ -32,19 +77,13 @@ export const TabItem = ({ open, data, isBenefit = false, toggle }) => {
             {title}
           </p>
         </div>
-        <div
-          className={`overflow-hidden  ${style.hidden_block} ${
-            open ? 'h-full' : 'h-0'
-          } `}
-        >
+        <div className="overflow-hidden h-auto">
           <div
-            className={`text-base text-justify transition-[margin] duration-700 ${
-              !open
-                ? 'mt-[-200vh] invisible opacity-0 pointer-events-none'
-                : 'mt-4 visible opacity-100  pointer-events-auto'
-            }
-            ${isBenefit ? 'pl-[45px]' : 'pl-10'}
-            `}
+            className="mt-[-300vh] pl-[40px]  text-[16px] leading-[1.2] text-justify  transition-[margin] duration-500 group-focus:mt-[16px] "
+            ref={refDescription}
+            style={{
+              marginTop: isOpen ? 16 : -descriptionHeight - 16,
+            }}
           >
             {textLines.map((item, idx) => (
               <p key={idx}>{item}</p>
@@ -72,6 +111,7 @@ export const TabItem = ({ open, data, isBenefit = false, toggle }) => {
                   className="underline"
                   target="_blank"
                   rel="nofollow noopener noreferrer"
+                  onFocus={e => ref.current.focus()}
                 >
                   {link.link}
                 </a>
@@ -83,7 +123,6 @@ export const TabItem = ({ open, data, isBenefit = false, toggle }) => {
     </li>
   );
 };
-
 TabItem.propTypes = {
   open: PropTypes.bool,
   data: PropTypes.object.isRequired,
