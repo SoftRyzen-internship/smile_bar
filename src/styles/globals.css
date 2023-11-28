@@ -7,15 +7,10 @@ body {
   background-color: var(--primaryBg);
 }
 
-/* @import './background.css'; */
 @import './bg.css';
+@import './links.css';
 /* Slider */
 @import '../components/Slider/Slider.module.css';
-
-.ReactCollapse--collapse {
-  transition: height 500ms;
-  will-change: transform;
-}
 
 html{
   scroll-behavior: smooth;
@@ -23,30 +18,4 @@ html{
 
 .isMenuShow {
   overflow-y: hidden;
-}
-
-.link {
-  position: relative;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.link:after {
-  content: '';
-  background: none repeat scroll 0 0 transparent;
-  bottom: -1px;
-  display: block;
-  height: 1px;
-  left: 50%;
-  position: absolute;
-  background: #1D1D1B;
-  transition: width 500ms ease 0s, left 500ms ease 0s;
-  width: 0;
-}
-
-.link:hover:after,
-.link:focus:after {
-  width: 100%;
-  left: 0;
 }

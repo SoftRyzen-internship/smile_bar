@@ -1,3 +1,5 @@
+.link,
+.linkText,
 .contactLinkText {
     position: relative;
     border: none;
@@ -5,6 +7,8 @@
     cursor: pointer;
 }
 
+.link:after,
+.linkText:after,
 .contactLinkText:after {
     content: '';
     background: none repeat scroll 0 0 transparent;
@@ -18,8 +22,12 @@
     width: 0;
 }
 
+.link:hover:after,
+.link:focus:after,
 .contactLink:hover .contactLinkText:after,
-.contactLink:focus .contactLinkText:after {
+.contactLink:focus .contactLinkText:after,
+.contactLink:hover .linkText:after,
+.contactLink:focus .linkText:after {
     width: 100%;
     left: 0;
 }
@@ -28,7 +36,6 @@
 .contactLink:focus span.contactLinkText:after {
     width: 0;
 }
-
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
 

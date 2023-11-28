@@ -79,7 +79,7 @@ export const Input = ({
   );
 };
 
-Input.proptypes = {
+Input.propTypes = {
   labelText: PropTypes.string,
   placeholderText: PropTypes.string,
   name: PropTypes.string.isRequired,
