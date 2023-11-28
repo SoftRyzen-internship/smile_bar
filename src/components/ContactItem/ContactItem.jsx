@@ -1,10 +1,11 @@
 import { Icon } from '../Icon';
 import PropTypes from 'prop-types';
+import styles from './ContactItem.module.css'
 
 export const ContactItem = ({ link, icon, text, type, className }) => {
   return (
     <a
-      className={`flex items-center gap-[8px] text-[16px] leading-[1.25] text-primary hover:text-contact hover:underline ${className}`}
+      className={`flex items-center gap-[8px] text-[16px] leading-[1.25] text-primary ${styles.contactLink} ${className}`}
       href={link}
       {...(type !== 'phone' && {
         rel: 'noopener noreferrer nofollow',
@@ -12,9 +13,12 @@ export const ContactItem = ({ link, icon, text, type, className }) => {
       })}
     >
       <Icon name={icon} />
-      <p className="flex flex-wrap">
+      <p className={`flex flex-wrap ${styles.contactLinkText}`}>
         {text.split('|').map((elem, index) => (
-          <span className="whitespace-pre" key={index}>
+          <span
+            className={`whitespace-pre  ${styles.contactLinkText}`}
+            key={index}
+          >
             {elem}
           </span>
         ))}
@@ -22,6 +26,8 @@ export const ContactItem = ({ link, icon, text, type, className }) => {
     </a>
   );
 };
+
+// transition-[text-decoration] duration-500 ease-in-out no-underline hover:underline
 
 ContactItem.proptypes = {
   type: PropTypes.oneOf(['phone', 'location', 'social']),
