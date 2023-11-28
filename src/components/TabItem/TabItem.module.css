@@ -1,4 +1,4 @@
-.item_focus {
+.item:focus {
   background-image: url('/bgl.svg'), url('/bgr.svg');
   background-size:
     200% auto,
@@ -10,22 +10,22 @@
 }
 
 @media screen and (min-width: 768px) {
-    .item_focus {
-        background-image: url('/bgtab.svg');
-        background-size: 100% 100%;
-    }
+  .item:focus {
+    background-image: url('/bgtab.svg');
+    background-size: 100% 100%;
+  }
 }
 
 .hidden_block {
-    animation: changeHeight 1s forwards;
+  animation: changeHeight 1s forwards;
 }
 
 @keyframes changeHeight {
-    0% {
-        height: 0;
-    }
+  0% {
+    height: 0;
+  }
 
-    100% {
-        height: 100%;
-    }
+  100% {
+    height: 100%;
+  }
 }

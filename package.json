@@ -15,7 +15,6 @@
     "next": "14.0.2",
     "next-sanity": "^5.5.10",
     "react": "^18",
-    "react-collapse": "^5.1.1",
     "react-dom": "^18",
     "react-hook-form": "^7.48.2",
     "react-hook-form-persist": "^3.0.0",
