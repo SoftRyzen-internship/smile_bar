@@ -5,7 +5,7 @@ import labelBurger from '@/data/labelBurger.json';
 export const BurgerIconWrap = ({ setMenuShow, open, children }) => {
   return (
     <button
-      className="p-3 cursor-pointer"
+      className="p-3 cursor-pointer xl:hidden"
       aria-label={
         open ? labelBurger.map(el => el.close) : labelBurger.map(el => el.open)
       }
