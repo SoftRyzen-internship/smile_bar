@@ -9,7 +9,7 @@ export const Call = () => {
         <a
           key={key}
           href={link}
-          className="text-center text-primary text-xl font-normal xl:text-base hover:underline hover:text-contact"
+          className="text-center text-primary text-xl font-normal xl:text-base  hover:text-contact link"
         >
           {phone}
         </a>
