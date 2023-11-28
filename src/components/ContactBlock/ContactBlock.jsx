@@ -20,7 +20,7 @@ export const ContactBlock = ({ title, items = [] }) => {
   );
 };
 
-ContactBlock.proptypes = {
+ContactBlock.propTypes = {
   title: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.shape({
