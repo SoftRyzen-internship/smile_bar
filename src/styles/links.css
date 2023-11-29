@@ -1,0 +1,51 @@
+.link,
+.linkText,
+.contactLinkText {
+    position: relative;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.link:after,
+.linkText:after,
+.contactLinkText:after {
+    content: '';
+    background: none repeat scroll 0 0 transparent;
+    bottom: -1px;
+    display: block;
+    height: 1px;
+    left: 50%;
+    position: absolute;
+    background: #1D1D1B;
+    transition: width 500ms ease 0s, left 500ms ease 0s;
+    width: 0;
+}
+
+.link:hover:after,
+.link:focus:after,
+.contactLink:hover .contactLinkText:after,
+.contactLink:focus .contactLinkText:after,
+.contactLink:hover .linkText:after,
+.contactLink:focus .linkText:after {
+    width: 100%;
+    left: 0;
+}
+
+.contactLink:hover span.contactLinkText:after,
+.contactLink:focus span.contactLinkText:after {
+    width: 0;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+
+    .contactLink:hover span.contactLinkText:after,
+    .contactLink:focus span.contactLinkText:after {
+        width: 100%;
+    }
+
+    .contactLink:hover .contactLinkText:after,
+    .contactLink:focus .contactLinkText:after {
+        width: 0;
+    }
+}

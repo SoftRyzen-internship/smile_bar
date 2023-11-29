@@ -127,8 +127,6 @@ hover:bg-blockHover transition-colors duration-300 ${style.item}
   );
 };
 TabItem.propTypes = {
-  open: PropTypes.bool,
   data: PropTypes.object.isRequired,
   isBenefit: PropTypes.bool,
-  toggle: PropTypes.func,
 };

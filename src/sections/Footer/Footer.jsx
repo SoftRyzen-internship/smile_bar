@@ -15,7 +15,7 @@ export const Footer = () => {
           {text}
           <Link
             href={link.src}
-            className={`creatorLink ${style.creatorLink}`}
+            className="link"
             target="_blank"
             rel="nofollow noopener noreferrer"
           >

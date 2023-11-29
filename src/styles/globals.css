@@ -7,15 +7,10 @@ body {
   background-color: var(--primaryBg);
 }
 
-/* @import './background.css'; */
 @import './bg.css';
+@import './links.css';
 /* Slider */
 @import '../components/Slider/Slider.module.css';
-
-.ReactCollapse--collapse {
-  transition: height 500ms;
-  will-change: transform;
-}
 
 html{
   scroll-behavior: smooth;

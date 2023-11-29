@@ -47,7 +47,7 @@ export const InputMessage = ({
   );
 };
 
-InputMessage.proptypes = {
+InputMessage.propTypes = {
   labelText: PropTypes.string,
   placeholderText: PropTypes.string,
   name: PropTypes.string.isRequired,
