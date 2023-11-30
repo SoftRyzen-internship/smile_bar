@@ -84,3 +84,13 @@
 .slick-list.dragging {
   cursor: pointer;
 }
+
+.Procedure .slick-slider {
+  min-height: 574px;
+}
+
+@media screen and (min-width: 1280px) {
+  .Procedure .slick-slider {
+    min-height: 530px;
+  }
+}
