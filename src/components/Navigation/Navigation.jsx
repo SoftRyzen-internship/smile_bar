@@ -11,36 +11,17 @@ export const Navigation = ({
     <ul className={`flex flex-col items-center gap-5 xl:flex-row ${className}`}>
       {navigation.map(({ id, title, link }, index) => (
         <li key={id}>
-          {isShow ? (
-            <a
-              href={`#${link}`}
-              onClick={isShow ? onClose : null}
-              className="text-center text-xl font-normal text-primary cursor-pointer xl:text-base hover:text-contact link"
-            >
-              {title}
-            </a>
-          ) : (
-            <Link
-              onClick={isShow ? onClose : null}
-              className="text-center text-xl font-normal text-primary cursor-pointer xl:text-base hover:text-contact link"
-              to={link}
-              spy={true}
-              smooth={true}
-              duration={300}
-              delay={500}
-              href="/"
-            >
-              {title}
-            </Link>
-          )}
-
-          {/* <a
-            href={`/${link}`}
+          <Link
             onClick={isShow ? onClose : null}
             className="text-center text-xl font-normal text-primary cursor-pointer xl:text-base hover:text-contact link"
+            to={link}
+            spy={true}
+            smooth={true}
+            duration={150}
+            href="/"
           >
             {title}
-          </a> */}
+          </Link>
         </li>
       ))}
     </ul>
