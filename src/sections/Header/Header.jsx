@@ -40,14 +40,7 @@ export const Header = () => {
       <header className={` relative w-full pt-9 xl:pb-6 `}>
         <div className="container mx-auto flex items-center justify-between pb-9 xl:pb-0">
           <Logo isShowMenu={menuShow} onCloseMenu={() => setMenuShow(false)} />
-          {menuShow ? (
-            <BurgerIconWrap
-              open={menuShow}
-              setMenuShow={() => setMenuShow(false)}
-            >
-              <Icon name="CloseIcon" className="xl:hidden" />
-            </BurgerIconWrap>
-          ) : (
+          {!menuShow && (
             <BurgerIconWrap
               open={menuShow}
               setMenuShow={() => setMenuShow(true)}
