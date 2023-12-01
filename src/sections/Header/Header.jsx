@@ -1,10 +1,5 @@
 'use client';
 import { useState, useEffect } from 'react';
-// import {
-//   disableBodyScroll,
-//   enableBodyScroll,
-//   clearAllBodyScrollLocks,
-// } from 'body-scroll-lock';
 
 import { Logo } from '@/components/Logo';
 import { Navigation } from '@/components/Navigation';
@@ -17,10 +12,8 @@ export const Header = () => {
   const [menuShow, setMenuShow] = useState(false);
   useEffect(() => {
     if (menuShow) {
-      // document.body.classList.add('isMenuShow');
       document.body.style.overflow = 'hidden';
     } else {
-      // document.body.classList.remove('isMenuShow');
       document.body.style.overflow = 'auto';
     }
     return () => {
