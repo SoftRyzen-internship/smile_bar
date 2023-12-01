@@ -28,12 +28,27 @@ export const ProcedureSection = () => {
   }, [allService.length]);
 
   return (
-    !isLoading && (
-      <Section id="Procedure" title="ПОСЛУГИ">
-        <p className="md:w-[642px] xl:w-[860px] mx-auto pt-4 text-center text-primary text-lg md:text-xl xl:text-2xl">
-          {procedure.map(item => item.description)}
-        </p>
-        <Slider className={className} centralMode={false} infinite={false}>
+    // !isLoading && (
+    <Section id="Procedure" title="ПОСЛУГИ">
+      <p className="md:w-[642px] xl:w-[860px] mx-auto pt-4 text-center text-primary text-lg md:text-xl xl:text-2xl">
+        {procedure.map(item => item.description)}
+      </p>
+
+      <div className="min-h-[574px] xl:min-h-[530px]">
+        {!isLoading && (
+          <Slider className={className} centralMode={false} infinite={false}>
+            {allService.length > 0 &&
+              allService.map(service => (
+                <Procedure
+                  key={service.title}
+                  service={service}
+                  over={overCard}
+                />
+              ))}
+          </Slider>
+        )}
+      </div>
+      {/* <Slider className={className} centralMode={false} infinite={false}>
           {allService.length > 0 &&
             allService.map(service => (
               <Procedure
@@ -42,11 +57,11 @@ export const ProcedureSection = () => {
                 over={overCard}
               />
             ))}
-        </Slider>
-        <p className="md:w-[623px] xl:w-[860px] mx-auto pt-4 text-center text-primary text-base xl:text-xl">
-          {procedure.map(item => item.promis)}
-        </p>
-      </Section>
-    )
+        </Slider> */}
+      <p className="md:w-[623px] xl:w-[860px] mx-auto pt-4 text-center text-primary text-base xl:text-xl">
+        {procedure.map(item => item.promis)}
+      </p>
+    </Section>
   );
+  // );
 };
