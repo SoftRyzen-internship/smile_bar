@@ -23,9 +23,6 @@ export const Slider = ({
           position: 'absolute',
           width: '24px',
           height: '24px',
-          // top: '100%',
-          // right: '50%',
-          // transform: 'translate(32px, -24px)',
         }}
         onClick={onClick}
       />
@@ -40,12 +37,8 @@ export const Slider = ({
         style={{
           ...style,
           display: 'block',
-          // position: 'absolute',
           width: '24px',
           height: '24px',
-          // top: '100%',
-          // left: '50%',
-          // transform: 'translate(-32px, -24px)',
         }}
         onClick={onClick}
       />
@@ -58,21 +51,18 @@ export const Slider = ({
     speed: 500,
     infinite: infinite,
     centerPadding: '0px',
-    // slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
       {
-        breakpoint: 2560,
+        breakpoint: 3860,
         settings: {
           centerMode: centralMode,
           infinite: infinite,
           slidesToShow: 3,
           slidesToScroll: 1,
-          // nextArrow: <SampleNextArrow />,
-          // prevArrow: <SamplePrevArrow />,
         },
       },
       {
@@ -81,9 +71,6 @@ export const Slider = ({
           infinite: infinite,
           centerMode: false,
           slidesToShow: 2,
-          // slidesToScroll: 1,
-          // nextArrow: <SampleNextArrow />,
-          // prevArrow: <SamplePrevArrow />,
         },
       },
       {
@@ -92,9 +79,6 @@ export const Slider = ({
           centerMode: false,
           infinite: infinite,
           slidesToShow: 1,
-          // slidesToScroll: 1,
-          // nextArrow: <SampleNextArrow />,
-          // prevArrow: <SamplePrevArrow />,
         },
       },
     ],
