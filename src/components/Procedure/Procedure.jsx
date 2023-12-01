@@ -32,8 +32,8 @@ export const Procedure = ({ service, over }) => {
             className="object-cover rounded-3xl w-full h-full"
             src={urlForImage(image).url()}
             alt={image.caption || 'Зображення процедури відбілювання'}
-            width={300}
-            height={300}
+            width={320}
+            height={502}
           />
           <p className=" left-1/2 top-[413px] translate-x-[-50%] absolute z-20 text-right text-primary text-2xl font-bold font-sans uppercase">
             {title}
