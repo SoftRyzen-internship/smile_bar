@@ -12,9 +12,11 @@ body {
 /* Slider */
 @import '../components/Slider/Slider.module.css';
 
-html{
+html {
   scroll-behavior: smooth;
 }
+
+
 
 .isMenuShow {
   overflow-y: hidden;
