@@ -39,13 +39,13 @@ export const Procedure = ({ service, over }) => {
             {title}
           </p>
         </div>
-        <div className="flex flex-col justify-between p-9 bg-zinc-400 bg-opacity-10 rounded-3xl backdrop-blur-[25px] absolute inset-0 w-full h-full xl:[transform:rotateY(180deg)] [backface-visibility:hidden] text-primary font-sans">
+        <div className="flex flex-col justify-between px-5 md:px-[31px] xl:px-[29px] py-9 bg-zinc-400 bg-opacity-10 rounded-3xl backdrop-blur-[25px] absolute inset-0 w-full h-full xl:[transform:rotateY(180deg)] [backface-visibility:hidden] text-primary font-sans">
           <div className="flex-col  items-center  gap-6 inline-flex ">
             <div className="flex-col justify-start items-center gap-1 inline-flex">
               <p className="text-right  text-base uppercase tracking-[16px]">
                 {procedureCard.map(item => item.title)}
               </p>
-              <p className="text-right text-2xl font-bold uppercase">{title}</p>
+              <p className="pl-4 text-2xl font-bold uppercase">{title}</p>
             </div>
             <div>
               <p className="text-justify text-base leading-tight ">
