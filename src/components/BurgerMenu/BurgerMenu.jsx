@@ -5,10 +5,12 @@ import { Call } from '../Call';
 import { Logo } from '../Logo';
 import { BurgerIconWrap } from '../BurgerIconWrap/BurgerIconWrap';
 import { Icon } from '../Icon';
+import { forwardRef } from 'react';
 
-export const BurgerMenu = ({ isShow, onClose }) => {
+export const BurgerMenu = forwardRef(function menu({ isShow, onClose }, ref) {
   return (
     <div
+      ref={ref}
       className={`w-full top-0 left-0 xl:hidden fixed bg-white  gradient  h-screen z-[300] gradient transition duration-150 easy-in-out
       ${
         isShow
@@ -21,7 +23,7 @@ export const BurgerMenu = ({ isShow, onClose }) => {
         <div className="container mx-auto">
           <div className="mb-9 flex justify-between">
             <Logo isShowMenu={isShow} onCloseMenu={onClose} />
-            <BurgerIconWrap setMenuShow={onClose} open="true">
+            <BurgerIconWrap setMenuShow={onClose} open={true}>
               <Icon name="CloseIcon" className="xl:hidden" />
             </BurgerIconWrap>
           </div>
@@ -32,7 +34,7 @@ export const BurgerMenu = ({ isShow, onClose }) => {
       </div>
     </div>
   );
-};
+});
 
 BurgerMenu.propTypes = {
   isShow: PropTypes.bool,
