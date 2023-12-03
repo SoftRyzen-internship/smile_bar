@@ -10,7 +10,7 @@ export const Section = ({
 }) => {
   return (
     <section id={id} className={`py-[18px] md:py-6 xl:py-10 ${className}`}>
-      <div className={`container max-w-[100vw] relative ${id}`}>
+      <div className={`max-w-[100vw] container  relative ${id}`}>
         <Title className={classToTitle}>{title}</Title>
         {children}
       </div>
