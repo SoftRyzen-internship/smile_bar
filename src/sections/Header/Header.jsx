@@ -34,7 +34,7 @@ export const Header = () => {
   return (
     <>
       <header className={` relative w-full pt-9 xl:pb-6 `}>
-        <div className="max-w-[100vw] container mx-auto flex items-center justify-between pb-9 xl:pb-0">
+        <div className="container max-w-[100vw] sm:max-w-[480px] md:max-w-[768px] xl:max-w-[1280px] mx-auto flex items-center justify-between pb-9 xl:pb-0">
           <Logo isShowMenu={menuShow} onCloseMenu={() => setMenuShow(false)} />
           {!menuShow && (
             <BurgerIconWrap
