@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import { Logo } from '@/components/Logo';
 import { Navigation } from '@/components/Navigation';
@@ -7,24 +7,34 @@ import { Call } from '@/components/Call';
 import { BurgerMenu } from '@/components/BurgerMenu';
 import { BurgerIconWrap } from '@/components/BurgerIconWrap/BurgerIconWrap';
 import { Icon } from '@/components/Icon';
+import {
+  clearAllBodyScrollLocks,
+  disableBodyScroll,
+  enableBodyScroll,
+} from 'body-scroll-lock';
 
 export const Header = () => {
   const [menuShow, setMenuShow] = useState(false);
+  const refBurger = useRef(null);
+
   useEffect(() => {
+    if (!refBurger.current) {
+      return;
+    }
     if (menuShow) {
-      document.body.style.overflow = 'hidden';
+      disableBodyScroll(refBurger.current);
     } else {
-      document.body.style.overflow = 'auto';
+      enableBodyScroll(refBurger.current);
     }
     return () => {
-      document.body.style.overflow = 'auto';
+      clearAllBodyScrollLocks();
     };
   }, [menuShow]);
 
   return (
     <>
       <header className={` relative w-full pt-9 xl:pb-6 `}>
-        <div className="container mx-auto flex items-center justify-between pb-9 xl:pb-0">
+        <div className="container max-w-[100vw] sm:max-w-[480px] md:max-w-[768px] xl:max-w-[1280px] mx-auto flex items-center justify-between pb-9 xl:pb-0">
           <Logo isShowMenu={menuShow} onCloseMenu={() => setMenuShow(false)} />
           {!menuShow && (
             <BurgerIconWrap
@@ -42,9 +52,12 @@ export const Header = () => {
           </div>
         </div>
       </header>
-      {menuShow && (
-        <BurgerMenu isShow={menuShow} onClose={() => setMenuShow(false)} />
-      )}
+
+      <BurgerMenu
+        ref={refBurger}
+        isShow={menuShow}
+        onClose={() => setMenuShow(false)}
+      />
     </>
   );
 };
